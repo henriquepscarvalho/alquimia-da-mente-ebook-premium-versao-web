@@ -1,0 +1,1134 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seus Primeiros R$ 1.000 com News · Alquimia da Mente</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#14170F;--body:#2C3128;--soft:#6A7060;--line:#E2E0D4;--line2:#EDEBE0;
+  --paper:#FBFAF4;--paper2:#F3F1E6;--card:#F1EFE3;
+  --em:#886F1D;--em2:#665316;--emlite:#F7F3E3;--emline:#F0E5BF;
+  --dark:#19180F;--dark2:#1E1D11;--darkink:#ECEEE5;--darksoft:#A3A485;--em-glow:#D4AF37;
+  --gold:#856B1A;--warn:#B4532A;--warnlite:#F6EBE4;--warnline:#E5CFC2;
+
+  --graf:#A8AEA0;}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#8C8F84;color:var(--body);font-family:Newsreader,Georgia,serif;font-size:17.5px;line-height:1.54;-webkit-font-smoothing:antialiased;counter-reset:pg}
+.page{max-width:760px;margin:26px auto;background:var(--paper);padding:60px 70px 74px;box-shadow:0 18px 50px rgba(0,0,0,.22);position:relative;counter-increment:pg}
+.page.cover{padding:0;background:var(--dark);overflow:hidden}
+.page.cover img{display:block;width:100%;height:auto}
+/* interior type */
+.kick{font-family:Inter,sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--em);font-weight:700;margin:0 0 14px}
+h2{font-family:Fraunces,serif;font-weight:600;font-size:32px;line-height:1.1;color:var(--ink);margin:0 0 10px;letter-spacing:-.01em}
+h3{font-family:Fraunces,serif;font-weight:600;font-size:20px;color:var(--ink);margin:26px 0 8px}
+p{margin:0 0 13px}
+.lead{font-size:20px;line-height:1.48;color:var(--ink)}
+strong,b{color:var(--ink);font-weight:600}
+em{color:var(--em2);font-style:italic}
+a{color:var(--em2)}
+.rule{height:1px;background:var(--line);border:0;margin:30px 0}
+.small{font-family:Inter,sans-serif;font-size:13px;color:var(--soft);line-height:1.5}
+.eyebrow{font-family:Inter,sans-serif;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);font-weight:600;margin:0 0 6px}
+/* item header */
+.item{display:flex;align-items:baseline;gap:16px;margin:0 0 6px}
+.item .n{font-family:Fraunces,serif;font-weight:700;font-size:38px;line-height:1;color:var(--em);font-variant-numeric:tabular-nums;min-width:60px}
+.item h2{margin:0}
+.cont{font-family:Inter,sans-serif;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);font-weight:700;margin:0 0 16px}
+/* rows */
+.field{margin:14px 0}
+.field .lab{font-family:Inter,sans-serif;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);font-weight:700;margin-bottom:3px}
+.field .val{color:var(--body)}
+/* bolso callout */
+.bolso{background:var(--emlite);border:1px solid var(--emline);border-radius:14px;padding:14px 20px;margin:15px 0}
+.bolso .t{font-family:Inter,sans-serif;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--em2);font-weight:700;margin-bottom:4px}
+.bolso p{margin:0;color:var(--ink);font-size:17px}
+.bolso b{color:var(--em2)}
+/* erro callout */
+.erro{background:var(--warnlite);border:1px solid var(--warnline);border-radius:14px;padding:14px 20px;margin:15px 0}
+.erro .t{font-family:Inter,sans-serif;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--warn);font-weight:700;margin-bottom:4px}
+.erro p{margin:0;color:var(--ink);font-size:17px}
+/* dark data chip */
+.figure{background:var(--dark);border-radius:14px;padding:17px 22px;margin:15px 0;display:flex;align-items:center;gap:22px}
+.figure .big{font-family:Fraunces,serif;font-weight:600;font-size:36px;color:var(--em-glow);line-height:1;font-variant-numeric:tabular-nums;white-space:nowrap}
+.figure .cap{font-family:Inter,sans-serif;font-size:13.5px;color:var(--darksoft);line-height:1.45}
+.figure .cap b{color:var(--darkink)}
+/* tables */
+table{width:100%;border-collapse:collapse;margin:15px 0;font-family:Inter,sans-serif;font-size:14px}
+th{text-align:left;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--soft);font-weight:700;padding:10px 12px;border-bottom:2px solid var(--line)}
+td{padding:10px 12px;border-bottom:1px solid var(--line2);color:var(--body);vertical-align:top}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+tr:last-child td{border-bottom:none}
+.tot td{border-top:2px solid var(--ink);font-weight:700;color:var(--ink);font-size:15px}
+.tot td .em{color:var(--em2)}
+/* gerente: o que ele diz x o que voce responde */
+table.gerente td:first-child{color:var(--soft);font-style:italic;width:44%}
+table.gerente td:last-child{color:var(--ink);font-weight:500}
+/* steps */
+ol.steps{list-style:none;counter-reset:st;padding:0;margin:16px 0}
+ol.steps li{counter-increment:st;position:relative;padding:0 0 11px 42px;font-size:17px}
+ol.steps li::before{content:counter(st);position:absolute;left:0;top:1px;font-family:Inter,sans-serif;font-weight:700;font-size:13px;color:var(--em2);background:var(--emlite);border:1px solid var(--emline);border-radius:50%;width:26px;height:26px;display:flex;align-items:center;justify-content:center}
+/* script box */
+.script{background:var(--paper2);border:1px solid var(--line);border-radius:14px;padding:17px 24px;margin:15px 0;font-family:Newsreader,serif;font-size:17px;color:var(--ink);line-height:1.55}
+.script .q{color:var(--em2);font-family:Inter,sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;margin-bottom:8px}
+.script p{margin:0 0 12px}.script p:last-child{margin:0}
+/* caso narrado */
+.caso{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px 22px;margin:15px 0}
+.caso .t{font-family:Inter,sans-serif;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);font-weight:700;margin-bottom:6px}
+.caso p{margin:0 0 10px;font-size:16.5px}.caso p:last-child{margin:0}
+.caso .linha{font-family:Inter,sans-serif;font-size:14px;color:var(--ink);border-top:1px solid var(--line);padding-top:10px;margin-top:12px;display:flex;justify-content:space-between;gap:14px}
+.caso .linha b{color:var(--em2);font-variant-numeric:tabular-nums}
+/* checklist */
+.check{list-style:none;padding:0;margin:14px 0}
+.check li{position:relative;padding:8px 0 8px 34px;border-bottom:1px solid var(--line2);font-size:16.5px}
+.check li:last-child{border-bottom:none}
+.check li::before{content:"[  ]";position:absolute;left:0;top:9px;font-family:Inter,sans-serif;font-weight:700;color:var(--em);letter-spacing:-.02em}
+/* sumario */
+.toc{list-style:none;padding:0;margin:20px 0 0}
+.toc li{display:flex;align-items:baseline;gap:12px;padding:6.5px 0;border-bottom:1px solid var(--line2);font-family:Inter,sans-serif;font-size:15px;color:var(--ink)}
+.toc li .n{color:var(--em);font-weight:700;font-variant-numeric:tabular-nums;min-width:26px}
+.toc li .d{flex:1;border-bottom:1px dotted var(--line);height:1px;margin:0 4px}
+.toc li .p{color:var(--soft);font-variant-numeric:tabular-nums;font-size:13px}
+.toc .sec{margin-top:18px;border-bottom:none;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);font-weight:700;padding-bottom:2px}
+/* glossario */
+.gloss{margin:16px 0}
+.gloss .g{padding:12px 0;border-bottom:1px solid var(--line2)}
+.gloss .g:last-child{border-bottom:none}
+.gloss .g .termo{font-family:Inter,sans-serif;font-weight:700;font-size:14.5px;color:var(--ink);margin-bottom:2px}
+.gloss .g .trad{font-size:16.5px;color:var(--body)}
+/* ═══ componentes do miolo (ticket 03, sample selado) ═══ */
+.opener{position:relative;margin:-60px -70px 30px;height:300px;background:var(--dark);overflow:hidden}
+.opener img{width:100%;height:100%;object-fit:cover;display:block}
+.opener .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,15,13,.15) 0%,rgba(12,15,13,.86) 78%)}
+.opener .txt{position:absolute;left:70px;right:70px;bottom:26px}
+.opener .sec{font-family:Inter,sans-serif;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--em-glow);font-weight:700;margin-bottom:8px}
+.opener h2{font-size:34px;line-height:1.06;color:var(--darkink);margin:0;letter-spacing:-.015em}
+.infog{background:var(--paper2);border:1px solid var(--line);border-radius:14px;padding:22px 26px;margin:18px 0}
+.infog .ttl{font-family:Inter,sans-serif;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);font-weight:700;margin-bottom:4px}
+.infog .sub{font-family:Fraunces,serif;font-size:22px;color:var(--ink);font-weight:600;margin:0 0 16px;line-height:1.15}
+.bar{display:grid;grid-template-columns:200px 1fr 92px;align-items:center;gap:12px;margin:0 0 8px;font-family:Inter,sans-serif;font-size:13px}
+.bar .lb{color:var(--body);line-height:1.25}
+.bar .tk{display:block;height:14px;background:#E6E3D6;border-radius:3px;overflow:hidden}
+.bar .fl{display:block;height:100%;background:var(--graf);border-radius:3px}
+.bar .vl{text-align:right;font-variant-numeric:tabular-nums;color:var(--body);font-weight:600}
+.bar.hot .fl{background:var(--em)}
+.bar.hot .lb,.bar.hot .vl{color:var(--em2);font-weight:700}
+.infog .tot{display:flex;align-items:baseline;justify-content:space-between;margin-top:14px;padding-top:12px;border-top:2px solid var(--ink)}
+.infog .tot .l{font-family:Inter,sans-serif;font-size:13px;color:var(--body);font-weight:600}
+.infog .tot .v{font-family:Fraunces,serif;font-size:30px;color:var(--em2);font-weight:700;font-variant-numeric:tabular-nums;line-height:1}
+.flow{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}
+.flow .st{background:var(--paper2);border:1px solid var(--line);border-radius:14px;padding:16px 16px 18px}
+.flow .st .n{font-family:Fraunces,serif;font-size:14px;font-weight:700;color:var(--em);letter-spacing:.04em;margin-bottom:8px}
+.flow .st .h{font-family:Inter,sans-serif;font-size:14px;font-weight:700;color:var(--ink);line-height:1.3;margin-bottom:6px}
+.flow .st .d{font-family:Inter,sans-serif;font-size:12.5px;color:var(--body);line-height:1.45}
+.flow .st.end{background:var(--emlite);border-color:var(--emline)}
+.flow .st.end .h{color:var(--em2)}
+.art{background:var(--dark);border-radius:14px;padding:20px 22px 18px;margin:16px 0}
+.art .hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;font-family:Inter,sans-serif}
+.art .hd .t{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--darksoft);font-weight:700}
+.art .hd .m{font-size:11.5px;color:var(--darksoft)}
+.art .ln{display:grid;grid-template-columns:64px 1fr 108px;gap:10px;padding:8px 12px;border-radius:6px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;color:#B4B49D;line-height:1.35}
+.art .ln .v{text-align:right;font-variant-numeric:tabular-nums}
+.art .ln.hit{background:rgba(212,175,55,.15);color:var(--darkink)}
+.art .ln.hit .v{color:var(--em-glow);font-weight:700}
+.art .ln.hit .d{color:var(--darkink);font-weight:500}
+.art .note{display:grid;grid-template-columns:22px 1fr;gap:10px;margin-top:12px;padding-top:12px;border-top:1px solid rgba(143,163,150,.24)}
+.art .note .k{font-family:Inter,sans-serif;font-size:12px;font-weight:700;color:var(--em-glow);letter-spacing:.02em}
+.art .note .x{font-family:Inter,sans-serif;font-size:13px;color:#CCCEBC;line-height:1.5}
+.art .note .x b{color:var(--darkink);font-weight:600}
+/* ═══ features web do kit Auditoria (F4 calculadora, F5 copiar) · só na tela ═══ */
+@media print{.webonly{display:none !important}}
+.printonly{display:none}
+@media print{.printonly{display:block}}
+.calc{background:var(--emlite);border:1px solid var(--emline);border-radius:14px;padding:18px 22px;margin:16px 0;font-family:Inter,sans-serif}
+.calc .t{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--em2);font-weight:700;margin-bottom:10px}
+.calc .row{display:grid;grid-template-columns:1fr 130px;gap:10px;align-items:center;padding:5px 0}
+.calc .row label{font-size:14px;color:var(--body)}
+.calc input{font-family:Inter,sans-serif;font-size:15px;padding:7px 10px;border:1px solid var(--emline);border-radius:8px;background:#fff;color:var(--ink);text-align:right;width:100%}
+.calc .tot{display:flex;justify-content:space-between;align-items:baseline;border-top:2px solid var(--ink);margin-top:10px;padding-top:10px}
+.calc .tot .l{font-size:13px;font-weight:700;color:var(--ink)}
+.calc .tot .v{font-family:Fraunces,serif;font-size:30px;font-weight:700;color:var(--em2);font-variant-numeric:tabular-nums}
+.copybtn{font-family:Inter,sans-serif;font-size:12px;font-weight:700;color:var(--em2);background:var(--emlite);border:1px solid var(--emline);border-radius:8px;padding:6px 12px;cursor:pointer;margin:2px 0 10px}
+.copybtn:active{background:var(--emline)}
+/* signoff */
+.signoff{margin-top:36px;padding-top:24px;border-top:1px solid var(--line)}
+.signoff .fim{font-family:Fraunces,serif;font-size:26px;color:var(--ink);font-weight:600}
+.signoff .bm{font-family:Inter,sans-serif;font-size:14px;color:var(--soft);margin-top:8px;letter-spacing:.02em}
+.signoff .bm b{color:var(--em2)}
+.pgnum{position:absolute;bottom:28px;right:34px;font-family:Inter,sans-serif;font-size:11px;color:var(--soft);letter-spacing:.1em}
+.pgnum::after{content:"Alquimia da Mente · " counter(pg)}
+@page{size:A4;margin:0}
+@media print{
+  body{background:#fff}
+  /* min-height, não height: seção que transborda vira 2 páginas no PDF e o check_pages.sh acusa.
+     Com height fixo o excesso era cortado em silêncio e a contagem dava falso positivo. */
+  .page{margin:0;box-shadow:none;max-width:none;width:100%;min-height:297mm;page-break-after:always;padding:52px 60px 58px}
+  .page.cover{padding:0}
+  .opener{margin:-52px -60px 28px}
+  .opener .txt{left:60px;right:60px}
+}
+@media(max-width:680px){
+  .page{padding:38px 24px 60px;margin:0}
+  h2{font-size:25px}.lead{font-size:18.5px}.item .n{font-size:30px;min-width:44px}
+  .figure{flex-direction:column;align-items:flex-start;gap:10px}
+  .caso .linha{flex-direction:column;gap:4px}
+  .opener{margin:-38px -24px 24px;height:240px}
+  .opener .txt{left:24px;right:24px}
+  .opener h2{font-size:26px}
+  .flow{grid-template-columns:1fr}
+  .bar{grid-template-columns:118px 1fr 78px;font-size:12px}
+  .art .ln{grid-template-columns:52px 1fr 88px;font-size:11.5px}
+  .calc .row{grid-template-columns:1fr 110px}
+}
+/* glossário denso: 13 termos */
+.gloss .g{padding:7px 0}
+.gloss .g .trad{font-size:15.5px}
+</style>
+</head>
+<body>
+<!-- ===================== CAPA (selada no ticket 01) ===================== -->
+<section class="page cover">
+  <img src="/ebook-web/capa-alquimia-da-mente.webp" alt="Seus Primeiros R$ 1.000 com News · Alquimia da Mente">
+</section>
+<!-- ===================== SUMÁRIO ===================== -->
+<section class="page">
+  <p class="kick">O que tem aqui</p>
+  <h2>Sumário</h2>
+  <p class="small">Leia na ordem das quatro famílias: as duas primeiras rotas ligam sozinhas e pagam sem pedir nada a ninguém, as três seguintes vivem dentro do texto que você já escreve, as duas de acesso pedem uma oferta sua, e a oitava fica guardada até a base cruzar os mil leitores.</p>
+  <ul class="toc">
+    <li class="sec">Abertura</li>
+    <li><span class="n">·</span><span>A premissa</span><span class="d"></span><span class="p">3</span></li>
+    <li><span class="n">·</span><span>O método</span><span class="d"></span><span class="p">4</span></li>
+    <li><span class="n">·</span><span>A taxonomia</span><span class="d"></span><span class="p">5</span></li>
+    <li><span class="n">·</span><span>O caso, antes</span><span class="d"></span><span class="p">6</span></li>
+    <li class="sec">As rotas</li>
+    <li><span class="n">01</span><span>A rede de anúncios da plataforma</span><span class="d"></span><span class="p">7</span></li>
+    <li><span class="n">02</span><span>A recomendação paga na porta de entrada</span><span class="d"></span><span class="p">10</span></li>
+    <li><span class="n">03</span><span>A ferramenta que você já usa todo dia</span><span class="d"></span><span class="p">13</span></li>
+    <li><span class="n">04</span><span>A estante que já está no rodapé</span><span class="d"></span><span class="p">17</span></li>
+    <li><span class="n">05</span><span>O treinamento do parceiro do seu nicho</span><span class="d"></span><span class="p">20</span></li>
+    <li><span class="n">06</span><span>O material que você já entrega de graça</span><span class="d"></span><span class="p">24</span></li>
+    <li><span class="n">07</span><span>A hora do seu tempo, vendida direto</span><span class="d"></span><span class="p">27</span></li>
+    <li><span class="n">08</span><span>O patrocínio direto, a rota que ainda não é sua</span><span class="d"></span><span class="p">31</span></li>
+    <li class="sec">O fecho</li>
+    <li><span class="n">·</span><span>A planilha do primeiro mil</span><span class="d"></span><span class="p">34</span></li>
+    <li><span class="n">·</span><span>O caso, depois</span><span class="d"></span><span class="p">35</span></li>
+    <li><span class="n">·</span><span>As falas prontas</span><span class="d"></span><span class="p">36</span></li>
+    <li><span class="n">·</span><span>Quando o gesto externo emperra</span><span class="d"></span><span class="p">37</span></li>
+    <li><span class="n">·</span><span>A manutenção</span><span class="d"></span><span class="p">38</span></li>
+    <li><span class="n">·</span><span>Glossário</span><span class="d"></span><span class="p">39</span></li>
+    <li><span class="n">·</span><span>O fecho</span><span class="d"></span><span class="p">40</span></li>
+  </ul>
+</section>
+
+<!-- ===================== ABERTURA · PÁGINA 3: A PREMISSA ===================== -->
+<section class="page" data-toc="A premissa" data-toc-sec="Abertura">
+  <p class="kick">A premissa</p>
+  <h2>O primeiro mil não vem de uma rota. Vem de sete.</h2>
+  <p class="lead">Quem escreve para menos de mil leitores fica esperando a rota grande: o patrocinador que aparece, o produto que decola, o mês que muda tudo. O primeiro mil não chega assim. Ele chega como sete rotas pequenas, ligadas dentro do mesmo mês, somando valores que sozinhos ninguém comemoraria.</p>
+  <p>O que falta antes dos mil leitores não é audiência. É ordem de ataque. Cada rota tem um preço de entrada diferente, e quase todo escritor começa justamente pela mais cara, a única em que outra pessoa decide se você recebe.</p>
+  <div class="infog">
+    <div class="ttl">O mapa · o primeiro mês da Marina, rota por rota</div>
+    <p class="sub">620 leitores ativos e 143 cadastros novos, um mês fechado</p>
+    <div class="bar"><span class="lb">05 · Treinamento do parceiro</span><span class="tk"><span class="fl" style="width:100%"></span></span><span class="vl">233,00</span></div>
+    <div class="bar"><span class="lb">07 · Uma hora do seu tempo</span><span class="tk"><span class="fl" style="width:85%"></span></span><span class="vl">197,00</span></div>
+    <div class="bar"><span class="lb">03 · A ferramenta de todo dia</span><span class="tk"><span class="fl" style="width:75%"></span></span><span class="vl">174,00</span></div>
+    <div class="bar"><span class="lb">06 · Material com preço</span><span class="tk"><span class="fl" style="width:60%"></span></span><span class="vl">140,00</span></div>
+    <div class="bar"><span class="lb">02 · Recomendação paga</span><span class="tk"><span class="fl" style="width:51%"></span></span><span class="vl">118,00</span></div>
+    <div class="bar"><span class="lb">01 · Rede de anúncios</span><span class="tk"><span class="fl" style="width:41%"></span></span><span class="vl">96,00</span></div>
+    <div class="bar"><span class="lb">04 · A estante do rodapé</span><span class="tk"><span class="fl" style="width:18%"></span></span><span class="vl">42,00</span></div>
+    <div class="bar hot"><span class="lb">08 · Patrocínio direto</span><span class="tk"><span class="fl" style="width:0%"></span></span><span class="vl">0,00</span></div>
+    <div class="tot"><span class="l">Sete rotas que pagaram · uma que não pagou</span><span class="v">R$ 1.000,00</span></div>
+  </div>
+  <h3>Como usar</h3>
+  <p>As rotas vêm na ordem do preço de entrada, da mais barata para a mais cara. Leia uma, abra o painel da sua newsletter e execute o movimento antes de passar para a próxima. Cada rota fecha em um gesto só e nenhuma depende da seguinte para pagar.</p>
+  <p class="small">Marina é um caso composto, montado a partir de padrões típicos de newsletter pequena. Os R$ 1.000,00 dela são uma montagem possível dentro de um mês, nunca uma média medida e nunca um resultado típico. O seu número sai do seu painel.</p>
+  <span class="pgnum"></span>
+</section>
+
+<!-- ===================== ABERTURA · PÁGINA 4: O MÉTODO ===================== -->
+<section class="page" data-toc="O método">
+  <p class="kick">O método</p>
+  <h2>Como ler o painel da sua newsletter em 10 minutos</h2>
+  <p>Todo painel entrega os mesmos quatro números: base ativa, aberturas, cliques por link e origem dos cadastros. Três deles servem para você se sentir bem. Um serve para decidir.</p>
+  <p>A abertura mede quem viu o assunto. O clique por link mede quem levantou da cadeira e foi atrás de alguma coisa. Trocar o eixo da leitura, de abertura para clique por link, é o movimento que faz a receita aparecer no painel que você já tinha aberto.</p>
+  <ol class="steps">
+    <li>Anote a <strong>base ativa</strong>, quem abriu alguma edição nos últimos 30 a 90 dias. É o número que sustenta as contas do livro inteiro, não o total cadastrado.</li>
+    <li>Olhe a <strong>taxa de abertura do mês</strong> contra o seu próprio mês anterior. Comparar com a média de outra pessoa não muda nenhuma decisão sua.</li>
+    <li>Abra o <strong>relatório de cliques por link</strong> da última edição e ordene do mais clicado para o menos clicado. É o passo que quase ninguém dá.</li>
+    <li>Leia o primeiro link da lista e responda uma pergunta: <strong>alguém paga por essa indicação hoje?</strong> Se a resposta for não, você achou a primeira rota.</li>
+    <li>Feche pela <strong>origem dos cadastros novos</strong>. Ela decide se você tem 143 entradas por mês para monetizar ou apenas o tamanho da base.</li>
+  </ol>
+  <div class="art">
+    <div class="hd"><span class="t">Painel de cliques · uma edição, ordenado por clique</span><span class="m">7 dias</span></div>
+    <div class="ln hit"><span>01</span><span class="d">FERRAMENTA DE ESCRITA, ENDERECO LIMPO</span><span class="v">44 cliques</span></div>
+    <div class="ln"><span>02</span><span class="d">EDICAO ANTERIOR NO ARQUIVO</span><span class="v">31 cliques</span></div>
+    <div class="ln"><span>03</span><span class="d">PORTFOLIO CITADO NO TEXTO</span><span class="v">22 cliques</span></div>
+    <div class="ln"><span>04</span><span class="d">RESPONDER ESTA EDICAO</span><span class="v">9 cliques</span></div>
+    <div class="note"><span class="k">01</span><span class="x">O link mais clicado da edição não é o texto dela. É uma <b>recomendação de ferramenta com o endereço limpo, sem comissão nenhuma</b>. O leitor já compra pela sua indicação, e a comissão está indo para outra pessoa. O painel ainda diz há quantos meses.</span></div>
+  </div>
+  <span class="pgnum"></span>
+</section>
+
+<!-- ===================== ABERTURA · PÁGINA 5: A TAXONOMIA ===================== -->
+<section class="page" data-toc="A taxonomia">
+  <p class="kick">A taxonomia</p>
+  <h2>As quatro famílias de receita</h2>
+  <p>Toda receita de newsletter cabe numa de quatro famílias. A família importa mais que o nome do produto: o nome muda de plataforma para plataforma e de ano para ano, a família não muda. Cada uma pede um gesto diferente, e o gesto define o preço de entrada.</p>
+  <h3>Alavancagem</h3>
+  <p>Mora dentro da própria plataforma de envio e paga sem você pedir nada a ninguém. Você liga uma chave, aprova o que chega pronto e a receita passa a acompanhar o tamanho da base. Nenhuma venda, nenhuma negociação, nenhum produto seu.</p>
+  <h3>Afiliação</h3>
+  <p>Vive dentro do texto que você já escreve. Você recomenda a ferramenta, o livro e o treinamento que usa de verdade, e recebe comissão de quem comprar pelo seu link. O trabalho novo é quase zero, e a conta é outra: a receita depende da confiança do leitor, e confiança quebrada aqui contamina as outras três famílias de uma vez.</p>
+  <h3>Acesso</h3>
+  <p>O dinheiro vem do leitor direto, comprando algo que é seu: um material com preço ou uma hora do seu tempo. Maior receita por comprador e maior atrito interno, porque exige colocar preço no que você sabe fazer. Com base pequena, é a única família que chega a três dígitos com dois ou três compradores.</p>
+  <h3>Anunciantes</h3>
+  <p>Uma empresa paga para aparecer na sua edição. A mais desejada e a última da fila, porque quem decide é o outro lado, e o outro lado compra tamanho de base antes de comprar qualidade de texto.</p>
+  <p class="small">A ordem de ataque segue o preço de entrada, nunca o tamanho do cheque. Alavancagem primeiro, porque você liga sozinho e ninguém precisa dizer sim. Afiliação depois, porque o texto já está escrito. Acesso em seguida, porque pede uma oferta sua e um preço dito em voz alta. Anunciantes por último, porque quem decide é o outro lado. Se as duas primeiras já estão ligadas, comece pela rota 03.</p>
+  <span class="pgnum"></span>
+</section>
+
+<!-- ===================== ABERTURA · PÁGINA 6: O CASO ===================== -->
+<section class="page" data-toc="O caso, antes">
+  <p class="kick">O caso</p>
+  <h2>A newsletter da Marina, antes</h2>
+  <p>Marina tem 31 anos e trabalha como designer freelancer. Escreve uma newsletter diária sobre rotina criativa desde janeiro, e desde janeiro nunca tirou um real dela.</p>
+  <p>O painel dela fecha o mês com 620 leitores ativos e 143 cadastros novos. Receita acumulada até aqui: R$ 0,00. Ela não escreve mal e não está parada. A lista cresce todo mês e os leitores respondem as edições.</p>
+  <p>Tentar, ela tentou. Em fevereiro passou sete semanas atrás de patrocinador: montou kit de mídia, escreveu para onze marcas e recebeu duas respostas, as duas perguntando o tamanho da base. Depois daquilo, concluiu que newsletter pequena não paga e voltou a escrever de graça.</p>
+  <p>Numa noite de quarta, ela abriu o painel e a pasta de arquivos que manda de graça, lado a lado. Não procurava rota nova. Queria escrever, rota por rota, o que já estava na mão dela sem estar ligado.</p>
+  <table>
+    <thead><tr><th>O que ela já tinha na mão</th><th class="num">Estado antes</th></tr></thead>
+    <tbody>
+      <tr><td>01 · Rede de anúncios da plataforma</td><td class="num">Chave desligada</td></tr>
+      <tr><td>02 · Recomendação paga na entrada</td><td class="num">Tela em branco</td></tr>
+      <tr><td>03 · Ferramenta que ela usa todo dia</td><td class="num">Link limpo</td></tr>
+      <tr><td>04 · Estante de livros do rodapé</td><td class="num">Citação sem link</td></tr>
+      <tr><td>05 · Treinamento de um parceiro</td><td class="num">Pedido nunca feito</td></tr>
+      <tr><td>06 · Material que ela já entregava</td><td class="num">Arquivo de graça</td></tr>
+      <tr><td>07 · Uma hora do tempo dela</td><td class="num">Nunca oferecido</td></tr>
+      <tr><td>08 · Patrocínio direto</td><td class="num">Sete semanas gastas</td></tr>
+      <tr class="tot"><td>Receita do mês, antes de ligar qualquer rota</td><td class="num"><span class="em">R$ 0,00</span></td></tr>
+    </tbody>
+  </table>
+  <p class="small">Cada rota traz o beat da Marina no fim do capítulo, com o gesto exato e o valor que ele pagou no primeiro mês fechado. Marina é um caso composto, montado a partir de padrões típicos de newsletter pequena, e não corresponde a uma pessoa específica: os valores dela são uma montagem possível, nunca uma média medida. A rota 08 fecha em R$ 0,00 de propósito, porque é a prova da tese e não uma falha dela.</p>
+  <span class="pgnum"></span>
+</section>
+
+<!-- ===================== ROTA 01 · PÁGINA 1: A MECÂNICA ===================== -->
+<section class="page" data-frente="01" data-toc="A rede de anúncios da plataforma" data-toc-sec="As rotas">
+  <div class="opener">
+    <img src="/ebook-web/mio-abre-01.webp" alt="">
+    <div class="veil"></div>
+    <div class="txt">
+      <div class="sec">Rota 01 · Alavancagem</div>
+      <h2>A rede de anúncios<br>da plataforma</h2>
+    </div>
+  </div>
+  <p class="lead">A rota de menor preço de entrada de todo o livro. Você não vende nada, não negocia com ninguém e não cria produto nenhum: liga uma chave no painel da plataforma de envio e a receita passa a acompanhar o tamanho da sua base.</p>
+  <p>A rede de anúncios é um sistema interno da plataforma. De um lado, empresas compram espaço dentro de newsletters por tema e por idioma. Do outro, você declara em que tema escreve e para quem. A plataforma cruza as duas pontas e entrega o bloco pronto para a sua próxima edição.</p>
+  <p>O bloco chega escrito, com imagem e link. Você lê, aprova e publica junto com o texto do dia. O pagamento vem por entrega ou por clique, conforme a campanha, e aparece no mesmo painel onde você acompanha as aberturas.</p>
+  <h3>Quem ganha com a chave desligada</h3>
+  <p>Ninguém ganha. A chave desligada não protege o seu leitor, porque você continua com o poder de recusar bloco a bloco depois de ligada. Ela só mantém a sua edição fora do estoque que os anunciantes compram, mês após mês.</p>
+  <p>O mecanismo é testado no ecossistema e tem uma virtude rara em lista pequena: cresce sozinho. Cada leitor ativo novo entra na conta do mês seguinte sem nenhum trabalho novo da sua parte. Por essa razão a rota abre o livro.</p>
+  <span class="pgnum"></span>
+</section>
+
+<!-- ===================== ROTA 01 · PÁGINA 2: ONDE SE ESCONDE ===================== -->
+<section class="page" data-frente="01">
+  <p class="kick">Rota 01</p>
+  <h2>Onde a receita se esconde</h2>
+  <p>A receita se esconde em dois lugares, e nenhum dos dois aparece no extrato. O primeiro é uma chave desligada na configuração da newsletter. O segundo é mais silencioso: a categoria do conteúdo, nunca declarada, que deixa a sua edição fora do estoque de anunciante. As duas travas ficam na mesma tela, a poucos centímetros uma da outra.</p>
+  <ol class="steps">
+    <li>Abra a <strong>configuração da newsletter</strong> no painel e procure a seção de monetização. A rede de anúncios aparece ali como uma chave, ligada ou desligada.</li>
+    <li>Ligue a chave. A partir do clique a sua edição entra no estoque, e nenhum bloco chega ao leitor sem a sua aprovação.</li>
+    <li>Declare a <strong>categoria do conteúdo</strong> e o idioma. Categoria em branco é a causa mais comum de edição que sai sem bloco nenhum.</li>
+    <li>Confira a posição do bloco. Dentro do corpo do email a entrega conta; fora do corpo, não.</li>
+  </ol>
+  <div class="art">
+    <div class="hd"><span class="t">Painel · configuração da newsletter</span><span class="m">Monetização</span></div>
+    <div class="ln"><span>01</span><span class="d">NOME PUBLICO DA NEWSLETTER</span><span class="v">definido</span></div>
+    <div class="ln"><span>02</span><span class="d">FREQUENCIA DE ENVIO · DIARIA</span><span class="v">ativa</span></div>
+    <div class="ln hit"><span>03</span><span class="d">REDE DE ANUNCIOS DA PLATAFORMA</span><span class="v">desligada</span></div>
+    <div class="ln hit"><span>04</span><span class="d">CATEGORIA DO CONTEUDO E IDIOMA</span><span class="v">em branco</span></div>
+    <div class="ln"><span>05</span><span class="d">POSICAO DO BLOCO NO CORPO DO EMAIL</span><span class="v">meio</span></div>
+    <div class="note"><span class="k">01</span><span class="x">As duas linhas destacadas são o achado. A chave desligada tira a edição do estoque, e a categoria em branco impede a plataforma de casar a sua newsletter com o anunciante certo. <b>Estoque vazio quase sempre é declaração faltando, não falta de anunciante.</b></span></div>
+  </div>
+  <p class="small">Ligar a chave não obriga você a publicar nada. Cada bloco continua passando pela sua aprovação, e recusar um anunciante fora do tema custa um clique.</p>
+  <span class="pgnum"></span>
+</section>
+
+<!-- ===================== ROTA 01 · PÁGINA 3: O MOVIMENTO ===================== -->
+<section class="page" data-frente="01">
+  <p class="kick">Rota 01</p>
+  <h2>O movimento</h2>
+  <div class="flow">
+    <div class="st">
+      <div class="n">PASSO 1</div>
+      <div class="h">Ligue e declare</div>
+      <div class="d">Chave da rede de anúncios ligada, categoria do conteúdo e idioma preenchidos na mesma visita ao painel. A declaração é o que coloca a sua edição no estoque de anunciante.</div>
+    </div>
+    <div class="st" data-acao="Ative a rede de anúncios da plataforma e aprove o bloco no mesmo dia do envio">
+      <div class="n">PASSO 2</div>
+      <div class="h">Aprove dentro do ritual</div>
+      <div class="d">A aprovação do bloco entra no mesmo bloco de tempo em que você escreve e envia a edição. Tarefa separada vira tarefa esquecida, e edição que saiu sem anúncio não volta atrás.</div>
+    </div>
+    <div class="st end">
+      <div class="n">PASSO 3</div>
+      <div class="h">Confira no fechamento</div>
+      <div class="d">No fechamento do mês, conte quantas edições enviadas saíram com bloco. Cada edição sem bloco é entrega paga que ficou de fora da conta.</div>
+    </div>
+  </div>
+  <div class="caso">
+    <div class="t">A newsletter da Marina</div>
+    <p>Marina achava que rede de anúncios só pagava lista grande. Deixou a chave desligada por sete meses e enviou todas as edições do período sem um bloco sequer. A conta que ela nunca fez estava na tela de configuração, a um clique de distância.</p>
+    <p>Ligou a rede, declarou a categoria do conteúdo e passou a aprovar o bloco junto com a edição, no mesmo horário. A base dela fechou o mês com 620 leitores ativos e 143 cadastros novos, e são os ativos que contam nesta rota.</p>
+    <div class="linha"><span>620 leitores ativos, primeiro mês com a chave ligada</span><b data-spine="96.00">R$ 96,00</b></div>
+  </div>
+  <div class="bolso"><div class="t">No seu bolso</div><p>A conta tem uma multiplicação só: leitores ativos vezes a faixa por assinante por mês. A faixa típica de mercado fica na casa de centavos por assinante ativo por mês, entre dez e vinte, declarada como faixa e nunca como valor recebido. Com os 620 leitores ativos de Marina, o mês fecha entre <b>R$ 62,00 e R$ 124,00</b>. Rode a conta com a sua base antes de esperar qualquer valor.</p></div>
+  <span class="pgnum"></span>
+</section>
+
+<!-- ===================== ROTA 02 · PÁGINA 1: A MECÂNICA ===================== -->
+<section class="page" data-frente="02" data-toc="A recomendação paga na porta de entrada">
+  <div class="opener">
+    <img src="/ebook-web/mio-abre-02.webp" alt="">
+    <div class="veil"></div>
+    <div class="txt">
+      <div class="sec">Rota 02 · Alavancagem</div>
+      <h2>A recomendação paga<br>na porta de entrada</h2>
+    </div>
+  </div>
+  <p class="lead">Existe uma tela que quase todo escritor vê uma vez e nunca mais abre: a que aparece no segundo seguinte ao cadastro. O leitor acabou de dizer sim para você, e ela costuma estar vazia.</p>
+  <p>A mecânica é curta. Depois de confirmar o email, o leitor novo cai numa tela onde aparecem outras newsletters que você recomenda. Um toque em cada uma e ele entra, sem formulário e sem sair da página. A outra ponta paga por cada leitor aceito como qualificado: email válido, entrada confirmada e sinal mínimo de engajamento.</p>
+  <h3>Quem paga pela porta de entrada</h3>
+  <p>A conta fecha para o outro lado por uma razão de custo. O leitor que chega pela recomendação de quem ele acabou de escolher ler entra com confiança emprestada. Ele abre mais, some menos e custa menos que o leitor trazido por anúncio frio, que ainda não conhece ninguém dentro daquela caixa de entrada.</p>
+  <p>A diferença entre a rota 01 e a rota 02 está em qual número manda. A rede de anúncios acompanha o tamanho da base: mais leitores ativos, mais entregas pagas. A recomendação paga acompanha o crescimento do mês, porque ela cobra pelos cadastros novos que passaram pela tela. Base grande e parada rende pouco aqui. Base pequena que cresce todo dia rende bem. Mecanismo testado no ecossistema, e a conta inteira vem na terceira página.</p>
+  <span class="pgnum"></span>
+</section>
+
+<!-- ===================== ROTA 02 · PÁGINA 2: ONDE SE ESCONDE ===================== -->
+<section class="page" data-frente="02">
+  <p class="kick">Rota 02</p>
+  <h2>Onde a receita se esconde</h2>
+  <p>A receita se esconde na página de obrigado em branco. É a tela de maior atenção que a sua newsletter produz, o segundo exato em que o leitor novo decidiu confiar em você, e quase todo escritor a entrega vazia desde o primeiro dia.</p>
+  <ol class="steps">
+    <li>Faça o próprio caminho do leitor novo: preencha o formulário da sua newsletter com um <strong>email de teste</strong> e vá até o fim, sem pular etapa.</li>
+    <li>Olhe a tela que aparece depois da confirmação. Se existe um bloco de recomendação e ele está <strong>vazio</strong>, você encontrou a receita parada.</li>
+    <li>No painel, ligue a recomendação e marque a <strong>modalidade paga</strong>, a que registra leitor qualificado. A chave desligada é o estado padrão de quem nunca mexeu.</li>
+    <li>Escolha duas ou três newsletters do mesmo tema e volte toda semana para ler duas colunas: <strong>cadastros novos</strong> e <strong>leitores aceitos</strong>.</li>
+  </ol>
+  <div class="art">
+    <div class="hd"><span class="t">Tela de obrigado · o que o leitor novo recebe</span><span class="m">Painel</span></div>
+    <div class="ln"><span>01</span><span class="d">CABECALHO COM O NOME DA NEWSLETTER</span><span class="v">preenchido</span></div>
+    <div class="ln"><span>02</span><span class="d">MENSAGEM DE BOAS VINDAS E PROXIMO ENVIO</span><span class="v">preenchido</span></div>
+    <div class="ln hit"><span>03</span><span class="d">AREA DE RECOMENDACAO DE NEWSLETTERS</span><span class="v">vazia</span></div>
+    <div class="ln"><span>04</span><span class="d">LINK PARA A ULTIMA EDICAO PUBLICADA</span><span class="v">preenchido</span></div>
+    <div class="ln"><span>05</span><span class="d">RODAPE COM CONTATO E REDES</span><span class="v">preenchido</span></div>
+    <div class="note"><span class="k">02</span><span class="x">A linha destacada é o <b>único bloco vazio de uma tela cheia</b>. Ela ocupa o único momento em que o leitor novo aceita mais uma inscrição sem pensar duas vezes, porque acabou de escolher você. A tela está de pé, entregue todo dia, e desperdiçada.</span></div>
+  </div>
+  <p class="small">Se o bloco já estiver ligado mas sem pagamento por leitor, você está recomendando de graça. O ajuste é de uma chave no painel, não de conteúdo.</p>
+  <span class="pgnum"></span>
+</section>
+
+<!-- ===================== ROTA 02 · PÁGINA 3: O MOVIMENTO ===================== -->
+<section class="page" data-frente="02">
+  <p class="kick">Rota 02</p>
+  <h2>O movimento</h2>
+  <div class="flow">
+    <div class="st" data-acao="Ligue a recomendação paga na tela de cadastro e confira o pagamento por leitor">
+      <div class="n">PASSO 1</div>
+      <div class="h">Ligue a recomendação paga</div>
+      <div class="d">No painel, abra a tela de cadastro, ative a área de recomendação e marque a modalidade que paga por leitor qualificado. Confira o valor por leitor antes de sair da tela: ele muda por campanha e por moeda.</div>
+    </div>
+    <div class="st">
+      <div class="n">PASSO 2</div>
+      <div class="h">Escolha pelo tema, nunca pelo tamanho</div>
+      <div class="d">Só newsletters do mesmo assunto que você escreve, e só as que você leria por vontade própria. Duas ou três, escolhidas uma a uma. O tamanho da outra lista não muda o que você recebe.</div>
+    </div>
+    <div class="st end">
+      <div class="n">PASSO 3</div>
+      <div class="h">Confira o aceite toda semana</div>
+      <div class="d">Recomendação fora do tema derruba a taxa de aceite e queima a confiança logo na entrada. Se o aceite cair, troque a recomendação, nunca a tela.</div>
+    </div>
+  </div>
+  <div class="caso">
+    <div class="t">A newsletter da Marina</div>
+    <p>A tela depois do cadastro dela era um obrigado em branco desde janeiro. Marina colocou duas recomendações do mesmo tema, rotina criativa, as duas de gente que ela já lia todo dia.</p>
+    <p>Não escreveu uma linha a mais. A base dela tinha 620 leitores ativos e recebeu 143 cadastros novos no mês, e 38 entraram como leitor qualificado.</p>
+    <div class="linha"><span>143 cadastros novos, 38 aceitos como leitor qualificado</span><b data-spine="118.00">R$ 118,00</b></div>
+  </div>
+  <div class="bolso"><div class="t">No seu bolso</div><p>A conta tem três fatores: cadastros novos do mês, vezes a taxa de aceite, vezes o valor por leitor qualificado. O terceiro é fixado pela outra ponta, então leia o seu no painel em vez de adotar o de alguém. Rodando com os números da Marina: 143 cadastros novos, 38 aceitos, taxa de aceite de 27%, e os 38 leitores ao valor que o painel dela mostrava fecharam <b>R$ 118,00</b> no mês.</p></div>
+  <span class="pgnum"></span>
+</section>
+
+<!-- ===================== ROTA 03 · PÁGINA 1: A MECÂNICA ===================== -->
+<section class="page" data-frente="03" data-toc="A ferramenta que você já usa todo dia">
+  <div class="opener">
+    <img src="/ebook-web/mio-abre-03.webp" alt="">
+    <div class="veil"></div>
+    <div class="txt">
+      <div class="sec">Rota 03 · Afiliação</div>
+      <h2>A ferramenta que você<br>já usa todo dia</h2>
+    </div>
+  </div>
+  <p class="lead">Existe um software que você abre todo dia antes de escrever a edição. Você já recomenda de graça, já explicou no texto por que gosta, já mandou o endereço para o leitor que perguntou. O endereço que você mandou era o limpo.</p>
+  <p>A rota 03 é a mais mal aproveitada da lista pequena. Ela não pede audiência nova, não pede produto seu, não pede negociação com ninguém. Pede uma troca de endereço em texto que já está publicado.</p>
+  <p>Ela também é a única rota do livro com receita que pode voltar nos meses seguintes. Quando o programa da ferramenta paga comissão recorrente, o leitor que assinou pelo seu link continua pagando a mensalidade dele, e a comissão acompanha enquanto o cliente indicado permanecer. As outras seis rotas recomeçam do zero todo mês. Aqui o mês passado pode trabalhar pelo mês que vem.</p>
+  <h3>Por que a comissão está indo para outra pessoa</h3>
+  <p>O atrito da rota 03 é interno, não técnico. O escritor teme parecer vendido, adia a troca do link e mantém o endereço limpo por educação. O leitor clica, assina, paga a mesma mensalidade, e a comissão vai para quem colocou o link com código na busca: um portal de cupom, um comparador, um canal grande que nunca usou a ferramenta. Nenhum centavo a mais sai do bolso do leitor. Muda só quem recebe a parte do lado de fora.</p>
+  <span class="pgnum"></span>
+</section>
+
+<!-- ===================== ROTA 03 · PÁGINA 2: ONDE A RECEITA SE ESCONDE ===================== -->
+<section class="page" data-frente="03">
+  <p class="kick">Rota 03</p>
+  <h2>Onde a receita se esconde</h2>
+  <p>A receita não está na edição de amanhã. Está no acervo: dezenas de edições antigas que continuam sendo lidas pela busca e pelo arquivo, com a mesma menção à ferramenta e o mesmo link sem comissão.</p>
+  <ol class="steps">
+    <li>Abra o relatório de tráfego do arquivo e liste as <strong>edições antigas que ainda recebem visita no mês</strong>. Texto com mais de seis meses costuma responder por boa parte da leitura.</li>
+    <li>Busque o nome de cada ferramenta que você usa dentro do arquivo inteiro. A busca do site resolve em minutos o que a memória não resolve.</li>
+    <li>Anote toda menção, com a data da edição e o endereço que está no texto. Menção sem link nenhum entra na lista igual.</li>
+    <li>Marque quais endereços são <strong>limpos</strong>, sem código de afiliado no fim. Endereço limpo em edição que recebe clique é o seu estoque de receita parada.</li>
+  </ol>
+  <div class="art">
+    <div class="hd"><span class="t">Varredura do acervo · menções à ferramenta</span><span class="m">12 meses</span></div>
+    <div class="ln"><span>ED. 041</span><span class="d">MENÇÃO AO EDITOR DE TEXTO</span><span class="v">SEM LINK</span></div>
+    <div class="ln hit"><span>ED. 067</span><span class="d">EDITOR DE TEXTO · LINK NO CORPO</span><span class="v">LINK LIMPO</span></div>
+    <div class="ln"><span>ED. 084</span><span class="d">MENÇÃO AO APLICATIVO DE NOTAS</span><span class="v">SEM LINK</span></div>
+    <div class="ln hit"><span>ED. 112</span><span class="d">EDITOR DE TEXTO · LINK NO RODAPÉ</span><span class="v">LINK LIMPO</span></div>
+    <div class="ln hit"><span>ED. 129</span><span class="d">EDITOR DE TEXTO · LINK NO CORPO</span><span class="v">LINK LIMPO</span></div>
+    <div class="note"><span class="k">01</span><span class="x">Três edições diferentes, o <b>mesmo link limpo</b>, e as três continuam recebendo clique todo mês. Texto antigo responde busca e aparece no arquivo, então leva leitor novo até a mesma recomendação. O link limpo entrega a venda para quem aparecer na busca com o código no endereço.</span></div>
+  </div>
+  <p class="small">A varredura é uma vez só. Depois dela, a checagem entra no fechamento de cada edição.</p>
+  <span class="pgnum"></span>
+</section>
+
+<!-- ===================== ROTA 03 · PÁGINA 3: O MOVIMENTO ===================== -->
+<section class="page" data-frente="03">
+  <p class="kick">Rota 03</p>
+  <h2>O movimento</h2>
+  <ol class="steps">
+    <li>Entre no <strong>programa de afiliado da própria ferramenta</strong>. Quase todo software de assinatura tem um, e o cadastro sai no mesmo dia. Leia no painel do programa qual é a comissão e por quantos meses ela se repete, porque as duas regras mudam de programa para programa e de período para período.</li>
+    <li data-acao="Troque o link limpo da ferramenta que você usa todo dia pelo link de comissão">Troque o link em <strong>toda edição que ainda recebe tráfego</strong>, começando pelas mais visitadas da varredura. Edição antiga com leitor novo entrando é onde a troca paga primeiro.</li>
+    <li>Avise o leitor da troca em <strong>uma linha só</strong>, no rodapé: você recebe comissão de algumas ferramentas recomendadas e o preço para ele continua o mesmo. Aviso curto e visível vale mais que um parágrafo de justificativa.</li>
+    <li>Recomende apenas o que você usa de verdade. Confiança quebrada aqui contamina as outras três famílias de receita, porque o leitor que se sente vendido uma vez para de clicar em tudo.</li>
+  </ol>
+  <div class="caso">
+    <div class="t">A newsletter da Marina</div>
+    <p>Marina recomendava a mesma ferramenta de escrita desde o primeiro dia, sempre com o link limpo. Nunca tinha entrado no programa de afiliado, por achar que a lista dela era pequena demais para valer o cadastro.</p>
+    <p>Entrou, trocou o link nas edições que ainda recebiam visita e avisou os leitores em uma linha no rodapé. Nove assinaturas fechadas no mês, com os 620 leitores ativos da base.</p>
+    <div class="linha"><span>620 leitores ativos, nove assinaturas fechadas no mês</span><b data-spine="174.00">R$ 174,00</b></div>
+  </div>
+  <div class="bolso"><div class="t">No seu bolso</div><p>A conta: assinaturas fechadas no mês multiplicadas pela comissão do programa e pela quantidade de meses em que ela se repete. O valor de estreia é <b>piso e nunca média</b>, porque a comissão só vira recorrente se o cliente indicado permanecer, e nenhum primeiro mês permite saber quantos permanecem.</p></div>
+  <span class="pgnum"></span>
+</section>
+
+<!-- ===================== ROTA 03 · PÁGINA 4: A RESPOSTA PRONTA ===================== -->
+<section class="page" data-frente="03">
+  <p class="kick">Rota 03 · rota pesada</p>
+  <h2>A resposta pronta</h2>
+  <p>A resistência da rota 03 não vem de fora. Vem de dentro, nas mesmas cinco frases.</p>
+  <table class="gerente">
+    <thead><tr><th>O que trava a troca do link</th><th>O que você responde a si mesmo</th></tr></thead>
+    <tbody>
+      <tr><td>"Vou parecer vendido."</td><td>"Recomendação sem link já é recomendação. O link só registra quem indicou."</td></tr>
+      <tr><td>"Meus leitores vão perceber e sair."</td><td>"Percebem porque eu aviso. Uma linha custa menos que descobrir depois."</td></tr>
+      <tr><td>"Minha lista é pequena demais para valer a pena."</td><td>"A conta é por assinatura fechada, não por tamanho de base."</td></tr>
+      <tr><td>"Não sei se vale trocar link de edição velha."</td><td>"A varredura já disse quais edições recebem visita. Troco nelas."</td></tr>
+      <tr><td>"E se a ferramenta piorar depois que eu recomendar."</td><td>"Tiro a recomendação e conto o motivo."</td></tr>
+    </tbody>
+  </table>
+  <div class="infog">
+    <div class="ttl">Onde a recomendação já acontece · uma edição comum</div>
+    <p class="sub">Fatia de clique por tipo de link, padrão típico de newsletter pequena</p>
+    <div class="bar hot"><span class="lb">Link da ferramenta que você usa</span><span class="tk"><span class="fl" style="width:100%"></span></span><span class="vl">40 a 50%</span></div>
+    <div class="bar"><span class="lb">Link do artigo citado</span><span class="tk"><span class="fl" style="width:55%"></span></span><span class="vl">20 a 25%</span></div>
+    <div class="bar"><span class="lb">Link do arquivo do acervo</span><span class="tk"><span class="fl" style="width:35%"></span></span><span class="vl">12 a 18%</span></div>
+    <div class="bar"><span class="lb">Link da rede social</span><span class="tk"><span class="fl" style="width:22%"></span></span><span class="vl">8 a 12%</span></div>
+    <div class="tot"><span class="l">O link mais clicado é o que não pagava nada</span><span class="v">sem comissão</span></div>
+  </div>
+  <span class="pgnum"></span>
+</section>
+
+<!-- ===================== ROTA 04 · PÁGINA 1: A MECÂNICA ===================== -->
+<section class="page" data-frente="04" data-toc="A estante que já está no rodapé">
+  <div class="opener">
+    <img src="/ebook-web/mio-abre-04.webp" alt="">
+    <div class="veil"></div>
+    <div class="txt">
+      <div class="sec">Rota 04 · Afiliação</div>
+      <h2>A estante que já está<br>no rodapé</h2>
+    </div>
+  </div>
+  <p class="lead">Você fecha a edição citando um livro. O leitor anota o título, procura sozinho e compra em outro lugar. A indicação foi sua, a venda foi de outro.</p>
+  <p>A estante já existe dentro do seu texto. São os livros que você leu, o material que recomendou numa resposta de email, o produto que usa e cita de passagem quando a frase pede um exemplo. Nada precisa ser criado, escrito ou negociado. O que falta é um link.</p>
+  <p>A mecânica é curta. Você entra no programa de afiliado de um catálogo, gera o link do item e recebe comissão de quem comprar entrando por ele. A comissão muda por categoria e por período, então o número não se decora: você lê a comissão vigente dentro do próprio programa antes de indicar.</p>
+  <h3>Por que a menor rota fica no livro</h3>
+  <p>Esta é a menor rota das sete e a de menor atrito. Ela está aqui justamente por ser pequena, porque prova a tese central do livro: rota pequena entra na conta em vez de ser descartada.</p>
+  <p>O escritor de lista pequena despreza a rota de dois dígitos enquanto espera a que resolve o mês inteiro sozinha. Ela não existe antes dos mil leitores. Sete rotas pequenas somadas fecham o primeiro mil, e quem descarta a menor nunca chega lá: nenhuma das outras seis cresce para cobrir a que ficou de fora.</p>
+  <span class="pgnum"></span>
+</section>
+
+<!-- ===================== ROTA 04 · PÁGINA 2: ONDE A RECEITA SE ESCONDE ===================== -->
+<section class="page" data-frente="04">
+  <p class="kick">Rota 04</p>
+  <h2>Onde a receita se esconde</h2>
+  <p>A receita se esconde na citação solta. Você nomeia o livro, o leitor fica com vontade, e você manda ele procurar sozinho. A venda vai para quem quer que apareça na busca.</p>
+  <ol class="steps">
+    <li>Abra as <strong>últimas trinta edições</strong> e marque toda vez que você nomeou um livro, um material ou um produto. A conta costuma passar de dez menções sem nenhum link.</li>
+    <li>Separe as menções em duas colunas: <strong>o que você leu ou usou de verdade</strong> e o que citou de ouvido. Só a primeira coluna vira link.</li>
+    <li>Entre no programa de afiliado do catálogo e procure a página onde a <strong>comissão é declarada por categoria</strong>. Livro, curso e eletrônico pagam percentuais diferentes, e o valor muda por período. Leia a tabela do programa antes de cada indicação.</li>
+    <li>Confira no painel quais <strong>edições antigas ainda recebem cliques</strong>. Texto publicado há meses continua sendo aberto, e a citação solta ali segue trabalhando de graça.</li>
+  </ol>
+  <div class="art">
+    <div class="hd"><span class="t">Rodapé de uma edição · o que você já indica</span><span class="m">Terça</span></div>
+    <div class="ln"><span>CORPO</span><span class="d">TEXTO SOBRE ROTINA CRIATIVA</span><span class="v">SEM LINK</span></div>
+    <div class="ln hit"><span>P.S.</span><span class="d">"O MANUAL DE TIPOGRAFIA QUE EU RELEIO"</span><span class="v">SEM LINK</span></div>
+    <div class="ln hit"><span>P.S.</span><span class="d">"AQUELE CLASSICO SOBRE HABITO"</span><span class="v">SEM LINK</span></div>
+    <div class="ln"><span>RODAPE</span><span class="d">EDICAO ANTERIOR DA NEWSLETTER</span><span class="v">COM LINK</span></div>
+    <div class="ln"><span>RODAPE</span><span class="d">DESCADASTRO E PREFERENCIAS</span><span class="v">COM LINK</span></div>
+    <div class="note"><span class="k">04</span><span class="x">O achado são as <b>duas menções sem link</b>. O rodapé linka a edição anterior e o descadastro, e deixa em texto puro justamente os títulos que o leitor quer comprar. Citação sem link é uma <b>indicação entregue de graça a um terceiro</b>: o trabalho de convencer foi seu, a comissão fica com quem aparecer na busca.</span></div>
+  </div>
+  <p class="small">Se as trinta edições não trouxerem menção nenhuma, a rota volta quando o próximo livro entrar no texto. Se trouxerem cinco ou mais, a estante já está montada e só falta o link.</p>
+  <span class="pgnum"></span>
+</section>
+
+<!-- ===================== ROTA 04 · PÁGINA 3: O MOVIMENTO ===================== -->
+<section class="page" data-frente="04">
+  <p class="kick">Rota 04</p>
+  <h2>O movimento</h2>
+  <ol class="steps">
+    <li data-acao="Cite apenas o livro ou produto que você usou, sempre com uma frase de contexto">Linke <strong>apenas o que você leu ou usou</strong>. A estante que vende é a que o leitor reconhece como sua, e uma indicação que você não sustenta numa conversa contamina as outras rotas.</li>
+    <li>Escreva sempre <strong>uma frase de contexto</strong> dizendo por que aquele item está ali: o que ele resolveu para você, em que semana, em que trabalho. A frase é o que transforma menção em recomendação.</li>
+    <li>Nunca monte <strong>lista de dez itens</strong> para inflar a chance de clique. Lista longa é sinal de que nada foi escolhido, e o leitor lê o sinal antes de ler os títulos.</li>
+    <li>Revise o <strong>rodapé das edições antigas que ainda recebem tráfego</strong>. Cada citação solta em texto vivo continua entregando venda para fora todo mês.</li>
+  </ol>
+  <div class="caso">
+    <div class="t">A newsletter da Marina</div>
+    <p>Marina fechava toda edição citando o livro da semana, sempre em texto puro, sem link nenhum. Achava que link ali deixaria a edição com cara de venda, e a indicação seguia de graça para quem aparecesse na busca.</p>
+    <p>Passou a linkar só o que leu de verdade, cada título com uma frase curta de contexto. Foi a menor rota do mês dela e a que pediu menos trabalho novo: nenhuma edição a mais, nenhuma oferta a mais.</p>
+    <div class="linha"><span>620 leitores ativos, a menor rota do primeiro mês</span><b data-spine="42.00">R$ 42,00</b></div>
+  </div>
+  <div class="bolso"><div class="t">No seu bolso</div><p>A conta é curta: <b>cliques no link</b> multiplicados pela <b>taxa de compra</b> e pela <b>comissão média do catálogo</b>, as três sempre tratadas como faixa e nunca como número fixo. A comissão você lê dentro do próprio programa antes de indicar, porque ela muda por categoria e por período. E guarde a proporção: R$ 42,00 sozinhos não mudam nada. R$ 42,00 somados às outras seis rotas são a diferença entre chegar e não chegar ao primeiro mil.</p></div>
+  <span class="pgnum"></span>
+</section>
+
+<!-- ===================== ROTA 05 · PÁGINA 1: A MECÂNICA ===================== -->
+<section class="page" data-frente="05" data-toc="O treinamento do parceiro do seu nicho">
+  <div class="opener">
+    <img src="/ebook-web/mio-abre-05.webp" alt="">
+    <div class="veil"></div>
+    <div class="txt">
+      <div class="sec">Rota 05 · Afiliação</div>
+      <h2>O treinamento do parceiro<br>do seu nicho</h2>
+    </div>
+  </div>
+  <p class="lead">Nas quatro rotas anteriores você ligava uma chave ou trocava um link sozinho. Aqui existe alguém do outro lado da mesa, lendo a sua mensagem e decidindo se a sua lista pequena vale uma comissão. É o maior atrito externo do livro.</p>
+  <p>O mecanismo é curto de explicar. Alguém já vende um treinamento para o mesmo público que lê você. Você pede afiliação, recebe um link próprio e ganha comissão de cada leitor seu que comprar. O trabalho novo cabe em duas edições e alguns emails, escritos na semana da abertura de turma.</p>
+  <p>O atrito não é técnico, é humano. O escritor de base pequena olha os 620 leitores ativos, imagina a recusa e não manda a mensagem. A recusa que ele evitou nunca chegou a existir: foi imaginada e tratada como fato.</p>
+  <h3>Por que o parceiro aceita lista pequena</h3>
+  <p>Quem vende treinamento não compra tamanho de lista. Compra atenção. Uma base de 620 leitores que abrem todo dia vale mais, numa abertura de turma, que uma de 6 mil que ignora o envio. O parceiro mede venda por clique recebido, nunca por cadastro que o afiliado alega ter.</p>
+  <p>A proximidade pesa ainda mais. Você escreve todo dia sobre um tema estreito, e o leitor recebe a sua recomendação como opinião de alguém conhecido, não como anúncio comprado.</p>
+  <span class="pgnum"></span>
+</section>
+
+<!-- ===================== ROTA 05 · PÁGINA 2: ONDE SE ESCONDE ===================== -->
+<section class="page" data-frente="05">
+  <p class="kick">Rota 05</p>
+  <h2>Onde a receita se esconde</h2>
+  <p>A receita se esconde numa pergunta que quase ninguém faz. O pedido de afiliação custa dez minutos e uma mensagem, e mesmo assim o escritor de base pequena pula a etapa, porque já decidiu sozinho qual seria a resposta do outro lado.</p>
+  <p>Pedido bem montado não é favor. É proposta com data, número e texto pronto.</p>
+  <ol class="steps">
+    <li>Escolha um treinamento que <strong>você mesmo comprou e terminou</strong>. Recomendar curso que você não fez quebra a confiança das outras rotas.</li>
+    <li>Levante no painel a <strong>base ativa e a taxa de abertura dos últimos 30 dias</strong>. Os dois números entram inteiros na mensagem, sem arredondar para cima.</li>
+    <li>Cheque o <strong>calendário de abertura de turma</strong> do parceiro. Fora da janela de venda, o melhor texto não converte.</li>
+    <li>Prepare as datas antes de escrever: qual edição sai, em que dia, e quantos emails acompanham a divulgação.</li>
+  </ol>
+  <div class="art">
+    <div class="hd"><span class="t">Rascunho · pedido de afiliação</span><span class="m">Linha a linha</span></div>
+    <div class="ln"><span>01</span><span class="d">ASSUNTO</span><span class="v">AFILIAÇÃO NA PRÓXIMA TURMA</span></div>
+    <div class="ln"><span>02</span><span class="d">QUEM ESCREVE</span><span class="v">NEWSLETTER DIÁRIA DO TEMA</span></div>
+    <div class="ln hit"><span>03</span><span class="d">BASE ATIVA E ABERTURA</span><span class="v">620 LEITORES · ABERTURA DO MÊS</span></div>
+    <div class="ln"><span>04</span><span class="d">PROVA DE USO</span><span class="v">COMPREI E TERMINEI O CURSO</span></div>
+    <div class="ln"><span>05</span><span class="d">O QUE EU ENTREGO</span><span class="v">DUAS EDIÇÕES E TRÊS EMAILS</span></div>
+    <div class="note"><span class="k">01</span><span class="x">Declarar o número pequeno com clareza é o que separa o pedido aceito do pedido ignorado. O parceiro descobre a sua base de qualquer jeito, no relatório de cliques da primeira edição, e um número <b>inflado na linha 03</b> encerra a parceria antes da segunda.</span></div>
+  </div>
+  <p class="small">O pedido inteiro cabe em cinco linhas. Mensagem longa não aumenta a chance de resposta, e a linha 03 é a que decide.</p>
+  <span class="pgnum"></span>
+</section>
+
+<!-- ===================== ROTA 05 · PÁGINA 3: O MOVIMENTO ===================== -->
+<section class="page" data-frente="05">
+  <p class="kick">Rota 05</p>
+  <h2>O movimento</h2>
+  <div class="flow">
+    <div class="st" data-acao="Peça afiliação a um parceiro do seu nicho antes da próxima abertura de turma">
+      <div class="n">PASSO 1</div>
+      <div class="h">Mande o pedido</div>
+      <div class="d">Mensagem curta com base ativa e taxa de abertura declaradas, sobre um treinamento que você mesmo comprou. Número honesto logo na primeira leitura, sem inflar.</div>
+    </div>
+    <div class="st">
+      <div class="n">PASSO 2</div>
+      <div class="h">Proponha as datas</div>
+      <div class="d">Ofereça o calendário antes da abertura de turma: a edição que sai, o dia exato e a sequência de emails. Data no papel transforma um pedido em plano.</div>
+    </div>
+    <div class="st end">
+      <div class="n">PASSO 3</div>
+      <div class="h">Entregue o texto pronto</div>
+      <div class="d">Mande as edições para aprovação do parceiro, em vez de pendurar um link solto no rodapé. Texto aprovado antes da abertura é o que faz o parceiro repetir a parceria.</div>
+    </div>
+  </div>
+  <div class="caso">
+    <div class="t">A newsletter da Marina</div>
+    <p>Marina nunca tinha pedido afiliação a ninguém. Mandou uma mensagem para a autora de um curso de portfólio que ela mesma fez, com a base ativa e a abertura do mês declaradas na terceira linha.</p>
+    <p>Entrou na abertura de turma com duas edições e três emails, todos escritos e aprovados antes da primeira venda. Três leitores compraram, o maior valor isolado do mês dela.</p>
+    <div class="linha"><span>620 leitores ativos, três compras na abertura de turma</span><b data-spine="233.00">R$ 233,00</b></div>
+  </div>
+  <div class="bolso"><div class="t">No seu bolso</div><p>A conta: leitores ativos multiplicados pela fatia da base que compra numa abertura de turma, sempre tratada como faixa, e depois pela comissão combinada, que você lê no painel do programa antes de aceitar. Com os 620 leitores ativos da Marina e uma faixa de <b>dois a cinco compradores por mil leitores</b>, a previsão do mês ficava entre um e três compradores. Ela fechou em três, o teto da faixa.</p></div>
+  <span class="pgnum"></span>
+</section>
+
+<!-- ===================== ROTA 05 · PÁGINA 4: A RESPOSTA PRONTA ===================== -->
+<section class="page" data-frente="05">
+  <p class="kick">Rota 05 · rota pesada</p>
+  <h2>A resposta pronta</h2>
+  <table class="gerente">
+    <thead><tr><th>O que o parceiro responde</th><th>O que você responde</th></tr></thead>
+    <tbody>
+      <tr><td>"Sua lista é muito pequena para o nosso programa."</td><td>"Mando a base ativa e a abertura do mês. Decida com o número na mão."</td></tr>
+      <tr><td>"O programa está fechado no momento."</td><td>"Me avise da próxima abertura de turma. Escrevo as edições antes."</td></tr>
+      <tr><td>"Me manda seus números."</td><td>"Base ativa, abertura e cliques do último mês, sem arredondar."</td></tr>
+      <tr><td>"Só trabalhamos com afiliado que já vendeu antes."</td><td>"Entro sem exclusividade. Se as vendas não vierem, você não perde nada."</td></tr>
+      <tr><td>"Não temos material de divulgação pronto."</td><td>"Escrevo os textos e mando para a sua aprovação antes de publicar."</td></tr>
+    </tbody>
+  </table>
+  <div class="infog">
+    <div class="ttl">O que o parceiro olha antes de dizer sim</div>
+    <p class="sub">Peso relativo, leitura típica de programa de afiliado</p>
+    <div class="bar"><span class="lb">Taxa de abertura da lista</span><span class="tk"><span class="fl" style="width:100%"></span></span><span class="vl">peso 10</span></div>
+    <div class="bar"><span class="lb">Proximidade com o tema do treinamento</span><span class="tk"><span class="fl" style="width:80%"></span></span><span class="vl">peso 8</span></div>
+    <div class="bar"><span class="lb">Texto preparado antes da abertura</span><span class="tk"><span class="fl" style="width:60%"></span></span><span class="vl">peso 6</span></div>
+    <div class="bar hot"><span class="lb">Tamanho da base</span><span class="tk"><span class="fl" style="width:20%"></span></span><span class="vl">peso 2</span></div>
+    <div class="tot"><span class="l">O critério que você acha que reprova é o de menor peso</span><span class="v">peso 2</span></div>
+  </div>
+  <span class="pgnum"></span>
+</section>
+
+<!-- ===================== ROTA 06 · PÁGINA 1: A MECÂNICA ===================== -->
+<section class="page" data-frente="06" data-toc="O material que você já entrega de graça">
+  <div class="opener">
+    <img src="/ebook-web/mio-abre-06.webp" alt="">
+    <div class="veil"></div>
+    <div class="txt">
+      <div class="sec">Rota 06 · Acesso</div>
+      <h2>O material que você já<br>entrega de graça</h2>
+    </div>
+  </div>
+  <p class="lead">Nas cinco rotas anteriores o dinheiro veio sempre de um terceiro: a plataforma, o parceiro, o catálogo. A partir daqui ele vem do leitor, direto, comprando algo que é seu.</p>
+  <p>A família Acesso abre nesta rota e muda a natureza da receita. Não existe mais intermediário aprovando bloco, fixando comissão ou decidindo se a sua lista pequena vale a proposta. Existe uma pessoa que leu você, confiou e apertou comprar.</p>
+  <p>A troca tem preço. Acesso é a família de maior receita por comprador do livro e também a de maior atrito interno, porque exige um gesto que as cinco rotas anteriores não pediram: colocar preço no que você sabe fazer. Com base pequena, é a única família que chega a três dígitos com dois ou três compradores.</p>
+  <h3>Por que a porta mais barata é esta</h3>
+  <p>A rota 06 abre a família pelo lado de menor custo de entrada. Você não precisa criar produto novo, gravar aula nem desenhar oferta. O material já existe: está na sua pasta, já saiu por email dezenas de vezes e já provou que serve.</p>
+  <p>O que trava não é a produção, é a decisão. Definir preço e apertar publicar. A trava é técnica, e a saída também é técnica: escolher o arquivo, escrever o número, ligar a entrega.</p>
+  <span class="pgnum"></span>
+</section>
+
+<!-- ===================== ROTA 06 · PÁGINA 2: ONDE A RECEITA SE ESCONDE ===================== -->
+<section class="page" data-frente="06">
+  <p class="kick">Rota 06</p>
+  <h2>Onde a receita se esconde</h2>
+  <p>A receita se esconde num gesto de generosidade que você repete sem contar. O leitor pede o modelo, você anexa, manda de graça e fecha o email. Quinze pessoas fizeram o mesmo pedido em seis meses, e nenhuma delas virou linha em lugar nenhum.</p>
+  <ol class="steps">
+    <li>Abra a <strong>caixa de saída</strong> e filtre por mensagens com anexo nos últimos seis meses. O arquivo mais repetido aparece antes de qualquer pesquisa de público.</li>
+    <li>Conte <strong>quantas vezes o mesmo arquivo saiu</strong>. Cinco envios já indicam demanda; quinze encerram a discussão sobre o que o leitor quer.</li>
+    <li>Leia <strong>o que o leitor escreveu ao pedir</strong>. As palavras do pedido são o título e a descrição do produto, prontos, sem nenhuma invenção sua.</li>
+    <li>Separe o que você mandaria de novo hoje do que já envelheceu. Só entra na rota o material que continua servindo <strong>do jeito que está</strong>.</li>
+  </ol>
+  <div class="art">
+    <div class="hd"><span class="t">Caixa de saída · o arquivo que sai sozinho</span><span class="m">Últimos 6 meses</span></div>
+    <div class="ln"><span>12/02</span><span class="d">RE: DUVIDA SOBRE PRECO DE FREELA</span><span class="v">SEM ANEXO</span></div>
+    <div class="ln hit"><span>03/03</span><span class="d">RE: VOCE PODE MANDAR AQUELE MODELO?</span><span class="v">MODELO-PROPOSTA</span></div>
+    <div class="ln hit"><span>21/03</span><span class="d">RE: PEDIDO DO MODELO DE PROPOSTA</span><span class="v">MODELO-PROPOSTA</span></div>
+    <div class="ln"><span>04/04</span><span class="d">RE: INDICACAO DE LIVRO</span><span class="v">SEM ANEXO</span></div>
+    <div class="ln hit"><span>19/04</span><span class="d">RE: TEM COMO MANDAR PRA MIM TAMBEM?</span><span class="v">MODELO-PROPOSTA</span></div>
+    <div class="note"><span class="k">06</span><span class="x">Três leitores diferentes, três datas diferentes, o mesmo anexo. Fechado o semestre, foram <b>quinze envios do mesmo arquivo</b>, e cada envio é uma pessoa dizendo o preço que estaria disposta a pagar, se alguém tivesse perguntado. Nenhuma pesquisa de público entrega prova desse tamanho: aqui o leitor pediu primeiro, com nome, data e frase própria.</span></div>
+  </div>
+  <p class="small">Se o arquivo mais pedido saiu duas vezes, a rota espera o próximo semestre. Se saiu dez ou mais, o produto já foi escolhido pelo leitor e falta apenas o preço.</p>
+  <span class="pgnum"></span>
+</section>
+
+<!-- ===================== ROTA 06 · PÁGINA 3: O MOVIMENTO ===================== -->
+<section class="page" data-frente="06">
+  <p class="kick">Rota 06</p>
+  <h2>O movimento</h2>
+  <ol class="steps">
+    <li data-acao="Cobre pelo material que você já entrega de graça, com preço fixo e entrega na hora">Escolha o <strong>arquivo mais pedido</strong> da caixa de saída e pare de entregar de graça. Um arquivo só: dois produtos ao mesmo tempo dividem a atenção e nenhum dos dois sai.</li>
+    <li>Arrume em <strong>meia hora</strong>, com o relógio na mesa. Capa simples, sumário, seu nome. Não refaça do zero: o material já provou que serve do jeito que está, e refazer é a forma mais elegante de adiar.</li>
+    <li>Coloque um <strong>preço de duas casas</strong> e entregue por link automático. Preço fixo, sem faixa e sem consulta: a plataforma de pagamento cobra, o link automático de entrega manda o arquivo, e você não toca em nada.</li>
+    <li>Anuncie no <strong>rodapé de três edições seguidas</strong>. Anúncio único some: quem abriu na terça não abriu na quarta, e o leitor precisa cruzar com a oferta mais de uma vez.</li>
+  </ol>
+  <div class="caso">
+    <div class="t">A newsletter da Marina</div>
+    <p>Marina mandava o mesmo modelo de proposta para todo leitor que pedia, sempre de graça, sempre em anexo. O arquivo estava pronto na pasta dela desde o primeiro cliente de design.</p>
+    <p>Ela colocou preço, ligou a entrega automática e anunciou no rodapé de três edições. Cobrou pouco, entregou na hora, e sete leitores compraram no primeiro mês um material que já existia.</p>
+    <div class="linha"><span>620 leitores ativos, sete compradores no primeiro mês</span><b data-spine="140.00">R$ 140,00</b></div>
+  </div>
+  <div class="bolso"><div class="t">No seu bolso</div><p>A conta é curta: <b>preço</b> multiplicado pela <b>fatia da base ativa que compra</b>, sempre tratada como faixa e nunca como certeza. Rode com os 620 leitores ativos de Marina: um por cento da base são seis compradores, dois por cento são doze. A fatia depende do tema, do momento e do que o leitor já pagou por algo parecido, então ela não está sob o seu controle. Sobra a única variável que é sua: o preço.</p></div>
+  <span class="pgnum"></span>
+</section>
+
+<!-- ===================== ROTA 07 · PÁGINA 1: A MECÂNICA ===================== -->
+<section class="page" data-frente="07" data-toc="A hora do seu tempo, vendida direto">
+  <div class="opener">
+    <img src="/ebook-web/mio-abre-07.webp" alt="">
+    <div class="veil"></div>
+    <div class="txt">
+      <div class="sec">Rota 07 · Acesso</div>
+      <h2>A hora do seu tempo,<br>vendida direto</h2>
+    </div>
+  </div>
+  <p class="lead">Nas seis rotas anteriores o dinheiro chegou de terceiros: a plataforma, o parceiro, o catálogo do outro. Aqui ele vem do leitor direto, comprando uma hora do seu tempo. É a rota que chega a três dígitos com dois compradores.</p>
+  <p>O mecanismo é o mais curto do livro. Você recorta um problema estreito que sabe resolver, abre poucas vagas com data e hora marcadas, e o leitor paga para sentar na frente do seu nome durante uma hora. Nenhuma chave nova no painel, nenhuma negociação com terceiro.</p>
+  <p>Por essa razão a rota 07 fecha mais rápido a conta de uma base pequena. A rede de anúncios precisa de milhares de entregas para somar dois dígitos. Aqui, dois compradores resolvem a maior parte de um mês inteiro.</p>
+  <h3>Onde o atrito mora</h3>
+  <p>O maior atrito do livro está nesta rota, e ele é interno. Você não precisa convencer plataforma nenhuma nem esperar resposta de parceiro. Precisa decidir quanto vale uma hora sua e dizer o preço em voz alta, na frente de gente que lê você todo dia.</p>
+  <p>A trava não é falta de competência, é falta de um número decidido. A saída é técnica, como nas outras seis: o recorte, as vagas e o preço saem de uma conta.</p>
+  <span class="pgnum"></span>
+</section>
+
+<!-- ===================== ROTA 07 · PÁGINA 2: ONDE SE ESCONDE ===================== -->
+<section class="page" data-frente="07">
+  <p class="kick">Rota 07</p>
+  <h2>Onde a receita se esconde</h2>
+  <p>A receita se esconde numa crença: ninguém pagaria por uma hora comigo. A crença tem uma característica cômoda, nunca foi testada. Ela se sustenta em nunca ter oferecido, e a falta de oferta acaba lida como falta de demanda.</p>
+  <p>A prova do contrário já está na sua caixa de entrada.</p>
+  <ol class="steps">
+    <li>Abra os emails de leitor dos <strong>últimos 90 dias</strong> e separe só os que fazem uma pergunta. Elogio não entra na conta.</li>
+    <li>Classifique cada pergunta <strong>pelo problema, não pelas palavras</strong>. Leitores diferentes descrevem a mesma trava com vocabulário próprio.</li>
+    <li>Conte quantas vezes o <strong>mesmo problema estreito</strong> voltou. Repetição é a prova de demanda que nenhuma pesquisa entrega.</li>
+    <li>Some o tempo que você gastou respondendo cada um de graça, uma resposta por vez. O total já é o atendimento que você entrega sem preço.</li>
+  </ol>
+  <div class="art">
+    <div class="hd"><span class="t">Caixa de entrada · perguntas de leitor</span><span class="m">Últimos 90 dias</span></div>
+    <div class="ln"><span>02/04</span><span class="d">ELOGIO DA EDIÇÃO DE ONTEM</span><span class="v">SEM PERGUNTA</span></div>
+    <div class="ln hit"><span>07/04</span><span class="d">"MEU PORTFÓLIO NÃO FECHA CLIENTE"</span><span class="v">PROBLEMA ESTREITO</span></div>
+    <div class="ln"><span>11/04</span><span class="d">PEDIDO DE INDICAÇÃO DE LIVRO</span><span class="v">FORA DO RECORTE</span></div>
+    <div class="ln hit"><span>19/04</span><span class="d">"MANDO O SITE E NINGUÉM RESPONDE"</span><span class="v">MESMO PROBLEMA</span></div>
+    <div class="ln hit"><span>26/04</span><span class="d">"O QUE EU TIRO DO PORTFÓLIO?"</span><span class="v">MESMO PROBLEMA</span></div>
+    <div class="note"><span class="k">01</span><span class="x">As três linhas destacadas são pessoas diferentes descrevendo <b>a mesma trava com palavras diferentes</b>. O recorte estreito do atendimento não se inventa numa folha em branco, se lê na caixa de entrada. Quem já perguntou de graça é quem paga para resolver com hora marcada.</span></div>
+  </div>
+  <p class="small">Se as perguntas não se repetem, o recorte ainda não existe. Continue respondendo de graça por mais um mês e volte a contar.</p>
+  <span class="pgnum"></span>
+</section>
+
+<!-- ===================== ROTA 07 · PÁGINA 3: O MOVIMENTO ===================== -->
+<section class="page" data-frente="07">
+  <p class="kick">Rota 07</p>
+  <h2>O movimento</h2>
+  <div class="flow">
+    <div class="st">
+      <div class="n">PASSO 1</div>
+      <div class="h">Recorte o problema</div>
+      <div class="d">Um problema estreito, com nome que o leitor reconhece na primeira leitura. Consultoria genérica não vende porque não promete nada que ele consiga imaginar acontecendo na hora marcada.</div>
+    </div>
+    <div class="st" data-acao="Abra três vagas de atendimento individual no rodapé da edição de sexta">
+      <div class="n">PASSO 2</div>
+      <div class="h">Abra poucas vagas</div>
+      <div class="d">Três vagas, com data e hora escritas, no rodapé da edição de fim de semana. Vaga sem número não vira decisão, e agenda aberta em branco convida o leitor a adiar.</div>
+    </div>
+    <div class="st end">
+      <div class="n">PASSO 3</div>
+      <div class="h">Pergunte antes de cobrar</div>
+      <div class="d">Responda cada interessado com uma pergunta antes de mandar o link de pagamento. A pergunta filtra quem não deveria comprar, e é o que evita reembolso e frustração dos dois lados.</div>
+    </div>
+  </div>
+  <div class="caso">
+    <div class="t">A newsletter da Marina</div>
+    <p>Marina achava que ninguém pagaria por uma hora com ela. Tinha 620 leitores ativos e meses de perguntas repetidas na caixa de entrada, quase todas sobre portfólio que não fecha cliente.</p>
+    <p>Abriu três vagas de diagnóstico de portfólio no rodapé da edição de sexta, com data e hora escritas. Duas foram preenchidas em dois dias, o teste que provou que a lista pequena tinha cliente dentro.</p>
+    <div class="linha"><span>620 leitores ativos, duas das três vagas preenchidas</span><b data-spine="197.00">R$ 197,00</b></div>
+  </div>
+  <div class="bolso"><div class="t">No seu bolso</div><p>A conta: preço da sessão multiplicado pelo número de vagas que cabem na sua semana. Repare no que ficou de fora da conta, a base ativa não entra em lugar nenhum. O limite da rota 07 não é o tamanho da lista, é a sua agenda. É a única rota do livro em que o teto é o seu tempo, e a única que sobe sem depender de um leitor novo.</p></div>
+  <span class="pgnum"></span>
+</section>
+
+<!-- ===================== ROTA 07 · PÁGINA 4: A RESPOSTA PRONTA ===================== -->
+<section class="page" data-frente="07">
+  <p class="kick">Rota 07 · rota pesada</p>
+  <h2>A resposta pronta</h2>
+  <p>Nas outras rotas a resistência vem de fora: o parceiro que não responde, a edição que não preenche. Aqui a resistência já estava dentro de você antes da primeira linha da oferta, e chega quase sempre na mesma ordem.</p>
+  <table class="gerente">
+    <thead><tr><th>O que a sua cabeça diz</th><th>O que responder a ela</th></tr></thead>
+    <tbody>
+      <tr><td>"Não sou especialista o bastante para cobrar."</td><td>"O comprador não busca o topo da área. Busca uma hora com quem está três passos à frente dele."</td></tr>
+      <tr><td>"E se ninguém comprar e eu passar vergonha na frente da lista?"</td><td>"Vaga não preenchida não vira aviso. Uma linha de rodapé sem clique não aparece para ninguém."</td></tr>
+      <tr><td>"Não sei que preço colocar."</td><td>"Comece pelo valor que você aceitaria receber por uma hora concentrada. Ajuste na segunda rodada, com demanda medida."</td></tr>
+      <tr><td>"E se eu não conseguir ajudar a pessoa?"</td><td>"A pergunta antes do pagamento existe para o caso. Quem está fora do recorte você recusa antes de cobrar."</td></tr>
+      <tr><td>"Minha lista é pequena demais para ter cliente dentro."</td><td>"Duas vagas fecham a conta desta rota. Base pequena precisa de dois sim, não de mil."</td></tr>
+    </tbody>
+  </table>
+  <p>O movimento que resolve quase todas as cinco é o mesmo: poucas vagas, data marcada e o número dito em voz alta. Três vagas na sexta, duas restantes no sábado, uma restante no domingo. Vaga sem número não vira decisão, porque quem pode adiar adia, e agenda sem limite comunica que limite nenhum existia.</p>
+  <p class="small">A regra honesta, para o caso de nenhuma vaga encher: o teste custou um rodapé e devolveu uma informação que vale mais que o silêncio. Ou o recorte estava largo demais, ou a data estava longe demais, ou o preço nunca foi dito. As três se corrigem na edição seguinte. A crença não testada, não.</p>
+  <span class="pgnum"></span>
+</section>
+
+<!-- ===================== ROTA 08 · PÁGINA 1: A MECÂNICA ===================== -->
+<section class="page" data-frente="08" data-toc="O patrocínio direto, a rota que ainda não é sua">
+  <div class="opener">
+    <img src="/ebook-web/mio-abre-08.webp" alt="">
+    <div class="veil"></div>
+    <div class="txt">
+      <div class="sec">Rota 08 · Anunciantes</div>
+      <h2>O patrocínio direto,<br>a rota que ainda não é sua</h2>
+    </div>
+  </div>
+  <p class="lead">É a rota que quase todo escritor tenta primeiro: uma empresa paga para aparecer na sua edição, você entrega o bloco combinado e recebe pelo envio. É também a última da fila, e a única aqui que fecha o mês em zero.</p>
+  <p>A mecânica é curta de descrever. Uma marca compra um espaço dentro do seu email, por uma edição ou por um pacote delas. Você publica, comprova a entrega e recebe. Nenhum passo é difícil de executar.</p>
+  <p>A diferença entre a rota 08 e as sete anteriores está no dono do gesto. Nas outras, quem destrava a receita é você: liga uma chave, troca um link, coloca preço num arquivo, abre uma vaga. Aqui quem destrava é um comprador que você não conhece e que responde quando quiser.</p>
+  <h3>Quem decide não é você</h3>
+  <p>O anunciante compra duas coisas antes de olhar a qualidade do seu texto: <strong>tamanho de base</strong> e <strong>previsibilidade de entrega</strong>. Ele quer saber quantos leitores abrem, com que regularidade a edição sai e quanto o alcance varia de uma semana para a outra. Lista pequena e histórico curto não respondem nenhuma das duas perguntas, por melhor que seja a escrita.</p>
+  <p>A rota é boa e vai ser sua. Ela paga bem, repete todo mês e não pede produto nenhum da sua parte. Só não paga hoje.</p>
+  <span class="pgnum"></span>
+</section>
+
+<!-- ===================== ROTA 08 · PÁGINA 2: ONDE A PERDA SE ESCONDE ===================== -->
+<section class="page" data-frente="08">
+  <p class="kick">Rota 08</p>
+  <h2>Onde a perda se esconde</h2>
+  <p>As outras sete rotas escondem receita. A rota 08 esconde perda, e a perda não aparece em extrato nenhum: ela aparece no calendário. O custo do patrocínio direto antes dos mil leitores é tempo.</p>
+  <ol class="steps">
+    <li>Conte as <strong>horas já gastas atrás de patrocinador</strong>: kit de mídia, garimpo de marcas, mensagem, revisão e espera. Some a espera também, porque ela ocupou a semana.</li>
+    <li>Escreva <strong>quantas marcas você abordou e quantas responderam</strong>, os dois números lado a lado, sem arredondar.</li>
+    <li>Anote <strong>o que a resposta pediu</strong>. Se a pergunta que voltou foi o tamanho da base, o pedido não foi recusado pelo texto, foi recusado pelo número.</li>
+    <li>Coloque a mesma quantidade de semanas ao lado de <strong>uma das sete rotas anteriores</strong> e compare o que ela teria pago.</li>
+  </ol>
+  <div class="art">
+    <div class="hd"><span class="t">Caixa de saída · pedidos de patrocínio</span><span class="m">Fevereiro e março</span></div>
+    <div class="ln"><span>04/02</span><span class="d">MARCA DE PAPELARIA · PRIMEIRO CONTATO</span><span class="v">SEM RESPOSTA</span></div>
+    <div class="ln hit"><span>11/02</span><span class="d">ESTUDIO DE DESIGN · KIT DE MIDIA EM ANEXO</span><span class="v">"QUANTOS ATIVOS?"</span></div>
+    <div class="ln"><span>19/02</span><span class="d">APP DE AGENDA · SEGUNDA TENTATIVA</span><span class="v">SEM RESPOSTA</span></div>
+    <div class="ln hit"><span>02/03</span><span class="d">LOJA DE MATERIAL · PROPOSTA REESCRITA</span><span class="v">"QUAL O TAMANHO DA LISTA?"</span></div>
+    <div class="ln"><span>17/03</span><span class="d">MAIS SETE MARCAS · MESMO PEDIDO</span><span class="v">SEM RESPOSTA</span></div>
+    <div class="note"><span class="k">08</span><span class="x">Onze pedidos, duas respostas, e as duas <b>perguntando a mesma coisa</b>. A proposta reescrita não mudou o resultado: a pergunta que volta é sempre o tamanho da base, e a resposta <b>não depende do texto do pedido</b>. Sete semanas cabem inteiras no quadro acima.</span></div>
+  </div>
+  <p class="small">Se a sua caixa de saída tem o mesmo formato, a rota não recusou a sua escrita. Recusou o seu número, e o número muda com o tempo.</p>
+  <span class="pgnum"></span>
+</section>
+
+<!-- ===================== ROTA 08 · PÁGINA 3: O MOVIMENTO ===================== -->
+<section class="page" data-frente="08">
+  <p class="kick">Rota 08</p>
+  <h2>O movimento</h2>
+  <ol class="steps">
+    <li data-acao="Adie o patrocínio direto até cruzar mil leitores ativos com kit de mídia pronto">Marque o <strong>gatilho de reabertura em mil leitores ativos</strong>. Adiar sem data é desistir; adiar com gatilho é estratégia, porque a rota volta sozinha ao seu campo de visão no dia em que o número bater.</li>
+    <li>Deixe o <strong>kit de mídia pronto e guardado</strong>: base ativa, abertura, cliques, perfil do leitor e formatos. Ele leva uma tarde, e atualizado uma vez por trimestre nunca vira a desculpa do atraso.</li>
+    <li>Devolva as <strong>semanas liberadas</strong> para as sete rotas anteriores, uma por mês, na ordem do livro.</li>
+    <li>Guarde a <strong>lista das marcas que responderam</strong>, com nome, data e o que perguntaram. A lista continua valendo quando a base cruzar o gatilho, e o segundo contato começa mais perto do sim que o primeiro.</li>
+  </ol>
+  <div class="caso">
+    <div class="t">A newsletter da Marina</div>
+    <p>Foi por aqui que Marina começou, em fevereiro. Montou o kit de mídia, listou marcas de design e papelaria e escreveu para onze delas. Duas responderam, e as duas perguntaram o tamanho da base.</p>
+    <p>Sete semanas de trabalho, nenhum contrato fechado, e a rota voltou para a gaveta até a base cruzar os mil. As sete rotas anteriores só começaram depois.</p>
+    <div class="linha"><span>Sete semanas de trabalho, onze marcas, duas respostas</span><b data-spine="0.00">R$ 0,00</b></div>
+  </div>
+  <div class="bolso"><div class="t">No seu bolso</div><p>A conta que fecha o argumento tem dois fatores: <b>base ativa</b> multiplicada pela faixa de mercado brasileiro <b>por leitor, por edição</b>, cobrada em centavos. Rode com os <b>620 leitores ativos</b> de Marina e a faixa em centavos: uma edição patrocinada fica na casa de poucas dezenas de reais, menos do que vale a semana de trabalho gasta para conquistá-la. Com <b>143 cadastros novos</b> por mês, o gatilho chega, e chega mais rápido com as sete rotas pagando o caminho. A rota é boa. O gatilho é mil.</p></div>
+  <span class="pgnum"></span>
+</section>
+
+<!-- ===================== FECHO · PÁGINA 1: A PLANILHA DO PRIMEIRO MIL ===================== -->
+<section class="page" data-toc="A planilha do primeiro mil" data-toc-sec="O fecho">
+  <p class="kick">A soma</p>
+  <h2>A planilha do primeiro mil</h2>
+  <p>Esta é a única página do livro que você preenche. A coluna do meio é sua: abra o painel da newsletter, rode a conta que cada rota ensinou e escreva o número que saiu. Uma rota por linha, sem pular a que parece pequena demais.</p>
+  <p>A coluna da direita é faixa possível, nunca previsão de receita. Ela foi calibrada para uma base do tamanho da base da Marina, <strong>620 leitores ativos</strong> e <strong>143 cadastros novos</strong> no mês, e as duas pontas sobem junto com a sua. Preencha as rotas já ligadas hoje e deixe as outras em branco: linha vazia também é informação.</p>
+  <table>
+    <thead><tr><th>Rota</th><th class="num">Seu valor no mês</th><th class="num">Faixa possível</th></tr></thead>
+    <tbody>
+      <tr data-campo="adnet" data-label="01 · Rede de anúncios da plataforma" data-min="0" data-max="200"><td>01 · Rede de anúncios da plataforma</td><td class="num">R$ ______</td><td class="num">0 a 200</td></tr>
+      <tr data-campo="boost" data-label="02 · Recomendação paga na entrada" data-min="0" data-max="250"><td>02 · Recomendação paga na entrada</td><td class="num">R$ ______</td><td class="num">0 a 250</td></tr>
+      <tr data-campo="saas" data-label="03 · Comissão da ferramenta que você usa" data-min="0" data-max="300"><td>03 · Comissão da ferramenta que você usa</td><td class="num">R$ ______</td><td class="num">0 a 300</td></tr>
+      <tr data-campo="estante" data-label="04 · Estante de livros e materiais" data-min="0" data-max="100"><td>04 · Estante de livros e materiais</td><td class="num">R$ ______</td><td class="num">0 a 100</td></tr>
+      <tr data-campo="parceiro" data-label="05 · Comissão de treinamento parceiro" data-min="0" data-max="400"><td>05 · Comissão de treinamento parceiro</td><td class="num">R$ ______</td><td class="num">0 a 400</td></tr>
+      <tr data-campo="produto" data-label="06 · Material com preço e entrega imediata" data-min="0" data-max="300"><td>06 · Material com preço e entrega imediata</td><td class="num">R$ ______</td><td class="num">0 a 300</td></tr>
+      <tr data-campo="servico" data-label="07 · Atendimento individual" data-min="0" data-max="450"><td>07 · Atendimento individual</td><td class="num">R$ ______</td><td class="num">0 a 450</td></tr>
+      <tr data-campo="patrocinio" data-label="08 · Patrocínio direto (só acima dos mil)" data-min="0" data-max="0"><td>08 · Patrocínio direto (só acima dos mil)</td><td class="num">R$ ______</td><td class="num">0</td></tr>
+      <tr class="tot"><td>Receita do seu primeiro mês</td><td class="num"><span class="em">R$ ______</span></td><td class="num">0 a 2.000</td></tr>
+    </tbody>
+  </table>
+  <div class="calc webonly" id="calc" data-unit="R$" data-total="Receita do seu primeiro mês, rota por rota"><div class="t">Receita do seu primeiro mês, rota por rota · preencha e a soma fecha sozinha</div></div>
+  <p class="small">Some os tetos das oito rotas e o resultado é <strong>R$ 2.000,00</strong>. O primeiro mil, então, é metade do que a mesma lista consegue num mês bom, e não o teto dela. Três ou quatro rotas ligadas já colocam o total em três dígitos. A rota 08 entra com teto zero de propósito, porque antes dos mil leitores ativos ela não paga, e uma linha honesta na planilha vale mais que uma linha otimista.</p>
+  <p class="small printonly">Na versão web deste guia, a planilha soma sozinha: <strong>lp.alquimiadamente.news/ebook-premium-versao-web</strong></p>
+  <span class="pgnum"></span>
+</section>
+
+<!-- ===================== FECHO · PÁGINA 2: O CASO, DEPOIS ===================== -->
+<section class="page" data-toc="O caso, depois">
+  <p class="kick">O caso</p>
+  <h2>A newsletter da Marina, depois</h2>
+  <p>Marina fechou o primeiro mês com os mesmos <strong>620 leitores ativos</strong> e os mesmos <strong>143 cadastros novos</strong> do quadro da abertura. Nenhuma edição a mais, nenhum leitor comprado, nenhum tema trocado. A diferença inteira está na coluna do meio.</p>
+  <p>A ordem importou. Ela ligou as duas chaves do painel numa tarde, trocou os links do acervo na tarde seguinte, e só depois mexeu nas ofertas que pediam preço dito em voz alta. As rotas que dependem de outra pessoa ficaram por último, e uma delas não entrou.</p>
+  <table>
+    <thead><tr><th>Rota</th><th class="num">No mês</th><th>O que aconteceu</th></tr></thead>
+    <tbody>
+      <tr><td>01 · Rede de anúncios</td><td class="num">R$ 96,00</td><td>Chave ligada, categoria declarada.</td></tr>
+      <tr><td>02 · Recomendação paga</td><td class="num">R$ 118,00</td><td>Tela em branco virou duas recomendações.</td></tr>
+      <tr><td>03 · Comissão da ferramenta</td><td class="num">R$ 174,00</td><td>Nove assinaturas pelo link trocado.</td></tr>
+      <tr><td>04 · Estante do rodapé</td><td class="num">R$ 42,00</td><td>Citação solta virou link com contexto.</td></tr>
+      <tr><td>05 · Treinamento do parceiro</td><td class="num">R$ 233,00</td><td>Pedido enviado, três leitores compraram.</td></tr>
+      <tr><td>06 · Material com preço</td><td class="num">R$ 140,00</td><td>Sete compradores de um arquivo antigo.</td></tr>
+      <tr><td>07 · Atendimento individual</td><td class="num">R$ 197,00</td><td>Duas das três vagas preenchidas.</td></tr>
+      <tr><td>08 · Patrocínio direto</td><td class="num">R$ 0,00</td><td>Guardada até a base cruzar os mil.</td></tr>
+      <tr class="tot"><td>Receita do primeiro mês fechado</td><td class="num"><span class="em">R$ 1.000,00</span></td><td>Sete rotas pagaram, uma ficou guardada.</td></tr>
+    </tbody>
+  </table>
+  <div class="bolso"><div class="t">No seu bolso</div><p>Os <b>R$ 1.000,00</b> saíram de <b>620 leitores ativos</b> e <b>143 cadastros novos</b>, e duas ressalvas andam junto com o número. A rota 08 fecha em <b>R$ 0,00 de propósito</b>: ela é a prova da tese do livro, não uma falha da Marina. E a rota 03 só vira receita recorrente se o cliente indicado permanecer, o que nenhum primeiro mês permite saber, então os R$ 174,00 dela são <b>piso e nunca média</b>. Marina é caso composto: o mês dela é uma montagem possível, jamais um resultado típico.</p></div>
+  <span class="pgnum"></span>
+</section>
+
+<!-- ===================== FECHO · PÁGINA 3: AS FALAS PRONTAS ===================== -->
+<section class="page" data-toc="As falas prontas">
+  <p class="kick">A execução</p>
+  <h2>As falas prontas</h2>
+  <p>Quatro momentos do livro exigem que você escreva para alguém: o parceiro do nicho, o leitor que clica no link da ferramenta, o leitor que recebia o material de graça e o leitor que vai ocupar uma vaga. O tom é o mesmo nos quatro. Curto, cordial e sem justificativa, porque quem explica demais abre espaço para desconto.</p>
+  <div class="script">
+    <div class="q">Diga assim</div>
+    <p data-script="pedido-afiliacao">"Escrevo uma newsletter diária sobre [tema] para [número] leitores ativos, com [número]% de abertura no último mês, e fiz o seu [treinamento] inteiro. Quero entrar como afiliado na próxima abertura de turma: duas edições e três emails, nas datas que você marcar, escritos e mandados para a sua aprovação antes de publicar."</p>
+    <p data-script="aviso-link">"Recebo comissão de algumas ferramentas que recomendo aqui, e o preço para você continua exatamente o mesmo."</p>
+    <p data-script="oferta-material">"O [modelo] que eu mandava por email para quem pedia agora tem preço fixo e chega na sua caixa de entrada no minuto da compra: [link]."</p>
+    <p data-script="oferta-vagas">"Abri três vagas de [recorte estreito] para [dia], às [hora]. Uma hora comigo, com o seu caso na tela, e eu digo em cada edição quantas ainda restam."</p>
+  </div>
+  <h3>As três regras de toda oferta</h3>
+  <ol class="steps">
+    <li data-acao="Marque o fechamento do mês no calendário, sempre no mesmo dia"><strong>Data escrita</strong>, na oferta e no fechamento do mês. Oferta sem dia marcado e conferência sem lembrete dependem de disposição, e disposição some na primeira semana cheia.</li>
+    <li><strong>Número dito em voz alta.</strong> Preço, quantidade de vagas, quantas restam. Oferta sem número não vira decisão, porque quem pode adiar adia.</li>
+    <li><strong>Aviso curto no lugar de defesa longa.</strong> Uma linha basta para contar que o link paga comissão ou que o material passou a ter preço. Parágrafo de justificativa transforma um fato comum em pedido de desculpa.</li>
+  </ol>
+  <span class="pgnum"></span>
+</section>
+
+<!-- ===================== FECHO · PÁGINA 4: A ESCALADA ===================== -->
+<section class="page" data-toc="Quando o gesto externo emperra">
+  <p class="kick">A escalada</p>
+  <h2>Quando o gesto externo emperra</h2>
+  <p>O parceiro não responde, a edição sai sem bloco, a vaga não enche. Nenhum dos casos pede troca de rota. Todos pedem um degrau a mais dentro da mesma rota, e o degrau tem forma escrita.</p>
+  <ol class="steps">
+    <li><strong>Parceiro que não responde.</strong> Espere sete dias antes de qualquer conclusão. Mande a segunda mensagem com a base ativa e a data da edição em que a divulgação entraria, e ofereça o texto pronto para a aprovação dele. Silêncio de quem vende treinamento quase sempre é agenda cheia, não recusa.</li>
+    <li><strong>Rede de anúncios que não preenche a edição.</strong> Confira três coisas antes de reclamar da plataforma: a categoria declarada, o idioma e a posição do bloco dentro do corpo do email. Estoque vazio quase sempre é declaração faltando, não falta de anunciante.</li>
+    <li><strong>Recomendação paga com aceite baixo.</strong> Troque as newsletters recomendadas por outras do mesmo tema e refaça a conta depois de cem cadastros novos, nunca antes. Abaixo de cem, a amostra move o número sozinha e você troca de novo à toa.</li>
+    <li><strong>Leitor que abre e não compra.</strong> Mova a oferta do rodapé para o meio da edição e troque a descrição do produto por uma frase sobre o problema que ele resolve. Quem lê pela metade nunca chegou ao rodapé.</li>
+    <li><strong>Vaga que não enche.</strong> Reduza de três para uma, marque data e hora fixas e diga quantas restam. Uma vaga com hora escrita decide mais rápido que três em aberto.</li>
+  </ol>
+  <div class="erro">
+    <div class="t">O erro que anula a escalada</div>
+    <p>Mexer nas ofertas quando três rotas travam no mesmo mês. Três travas juntas não são três problemas de oferta, são um problema de base: leitor ativo em queda derruba as sete ao mesmo tempo. Pare de reescrever texto e volte para o painel, porque nenhuma rota se conserta em cima de uma base que está encolhendo.</p>
+  </div>
+  <span class="pgnum"></span>
+</section>
+
+<!-- ===================== FECHO · PÁGINA 5: A MANUTENÇÃO ===================== -->
+<section class="page" data-toc="A manutenção">
+  <p class="kick">A manutenção</p>
+  <h2>A manutenção: o fechamento do mês</h2>
+  <p>Sete rotas ligadas viram sete extratos diferentes, e nenhum deles conversa com o outro sozinho. O fechamento existe para juntar os sete num número só, sempre no mesmo dia do calendário, com o painel da newsletter e o extrato de cada rota abertos do lado.</p>
+  <ol class="steps">
+    <li><strong>Marque o mesmo dia do calendário</strong>, todo mês, com lembrete. Data fixa vale mais que disposição.</li>
+    <li><strong>Anote quanto cada uma das sete pagou</strong>, uma linha por rota, com o extrato aberto. A rota que você acha que pagou bem quase nunca é a que pagou.</li>
+    <li><strong>Marque as que ficaram em zero.</strong> Zero não é fracasso, é endereço: a rota parou por gesto seu que faltou ou por gesto que depende do outro lado.</li>
+    <li><strong>Escolha uma única rota para o mês seguinte.</strong> Atacar as sete ao mesmo tempo é o jeito mais rápido de não terminar nenhuma.</li>
+  </ol>
+  <h3>As três perguntas que voltam sempre</h3>
+  <p><strong>Qual rota pagou mais por hora de trabalho no mês que fechou?</strong> Divida o valor pelo tempo, nunca pelo tamanho. A rota de R$ 42,00 que pediu vinte minutos rende mais por hora que a de R$ 233,00 que ocupou duas semanas.</p>
+  <p><strong>Qual recomendação eu faria de graça mesmo sem comissão nenhuma?</strong> A resposta protege as quatro famílias de uma vez. Recomendação que só existe pela comissão aparece no texto, e o leitor lê o tom antes de ler o argumento.</p>
+  <p><strong>O que muda no plano quando a base dobrar de tamanho?</strong> Escreva a resposta antes de a base dobrar. Rota que depende de leitor ativo sobe sozinha; rota que depende de oferta sua continua parada até você mexer.</p>
+  <p>As rotas de alavancagem sobem junto com a base e as de acesso sobem junto com a oferta. O mesmo mil se remonta de forma diferente a cada trimestre, e quem congela a divisão de hoje trabalha contra o próprio crescimento.</p>
+  <span class="pgnum"></span>
+</section>
+
+<!-- ===================== FECHO · PÁGINA 6: GLOSSÁRIO ===================== -->
+<section class="page" data-toc="Glossário">
+  <p class="kick">A tradução</p>
+  <h2>Glossário: o vocabulário de quem cobra</h2>
+  <p>Os treze termos que aparecem no painel, no email do parceiro e na proposta do anunciante.</p>
+  <div class="gloss">
+    <div class="g"><div class="termo">Base ativa</div><div class="trad">Quem abriu alguma edição nos últimos 30 a 90 dias. Não é o total cadastrado.</div></div>
+    <div class="g"><div class="termo">Rede de anúncios da plataforma</div><div class="trad">Sistema interno que põe anunciante na sua edição. O bloco chega pronto e você aprova.</div></div>
+    <div class="g"><div class="termo">Recomendação paga</div><div class="trad">Outra newsletter paga por cada leitor seu que a aceita na tela do cadastro.</div></div>
+    <div class="g"><div class="termo">Leitor qualificado</div><div class="trad">O cadastro que a outra ponta paga: email válido, entrada confirmada, engajamento mínimo.</div></div>
+    <div class="g"><div class="termo">Comissão recorrente</div><div class="trad">A que volta todo mês enquanto o cliente indicado seguir pagando.</div></div>
+    <div class="g"><div class="termo">Ticket</div><div class="trad">O preço de uma venda. Ticket baixo pede muitos compradores; alto fecha com dois.</div></div>
+    <div class="g"><div class="termo">Taxa de abertura</div><div class="trad">Fatia da base que abriu a edição. Compare com o seu próprio mês anterior.</div></div>
+    <div class="g"><div class="termo">Taxa de clique</div><div class="trad">Fatia de quem abriu e clicou. Prevê venda muito melhor que a abertura.</div></div>
+    <div class="g"><div class="termo">Custo por mil entregas</div><div class="trad">Quanto o anunciante paga a cada mil emails entregues. A régua para comparar propostas.</div></div>
+    <div class="g"><div class="termo">Patrocínio por leitor</div><div class="trad">O anunciante paga por leitor alcançado no envio, em centavos por leitor, por edição.</div></div>
+    <div class="g"><div class="termo">Kit de mídia</div><div class="trad">Uma folha com base ativa, abertura, cliques, perfil do leitor, formatos e preços.</div></div>
+    <div class="g"><div class="termo">Descadastro</div><div class="trad">Quem sai depois de um envio. Acima de meio por cento, olhe assunto e frequência.</div></div>
+    <div class="g"><div class="termo">Valor do leitor no tempo</div><div class="trad">Quanto um leitor deixa em caixa ao longo dos meses em que fica.</div></div>
+  </div>
+  <span class="pgnum"></span>
+</section>
+
+<!-- ===================== FECHO · PÁGINA 7: O FECHO ===================== -->
+<section class="page" data-toc="O fecho">
+  <p class="kick">O fecho</p>
+  <h2>O fim do terreno alugado</h2>
+  <p>Publicar na casa dos outros é alugar audiência. O dono muda a regra numa quinta à tarde, o alcance que você levou anos construindo encolhe, e não existe para quem reclamar. A newsletter inverte a posse: a lista é sua, o endereço de cada leitor é seu, e quem quiser passar pelo terreno negocia com você.</p>
+  <p>As sete rotas não criam audiência nova. Elas cobram pelo que já atravessa o terreno todo dia: a recomendação que você fazia de graça, a ferramenta que abria antes de escrever, o arquivo que mandava por email para quem pedisse. O primeiro mil não é linha de chegada. É a prova de que o terreno rende. A oitava fica guardada porque o preço dela ainda não é seu de decidir, e volta no dia em que a base cruzar os mil leitores ativos.</p>
+  <div class="infog">
+    <div class="ttl">O placar do primeiro mês</div>
+    <div class="tot" style="margin-top:8px;padding-top:8px;border-top:0"><span class="l">Sete rotas que pagaram · uma guardada</span><span class="v">R$ 1.000,00</span></div>
+  </div>
+  <ul class="check">
+    <li>Liguei as duas chaves do painel: rede de anúncios e recomendação paga</li>
+    <li>Troquei o link limpo da ferramenta de todo dia pelo link de comissão</li>
+    <li>Linkei só o livro que li, sempre com uma frase de contexto</li>
+    <li>Pedi afiliação ao parceiro e entrei na abertura de turma com texto pronto</li>
+    <li>Coloquei preço no material que eu entregava de graça, com entrega na hora</li>
+    <li>Abri as vagas de atendimento individual, com data e hora marcadas</li>
+    <li>Guardei o patrocínio direto até a base cruzar os mil leitores ativos</li>
+  </ul>
+  <div class="signoff">
+    <div class="fim">Dono do próprio terreno.</div>
+    <p style="margin:14px 0 0">Nenhuma das sete pediu leitor novo. Ligue a primeira hoje, marque o fechamento do mês no calendário e deixe a oitava esperando o gatilho.</p>
+    <div class="bm">Boa escrita. <b>Henrique Carvalho</b>, Alquimia da Mente</div>
+  </div>
+  <span class="pgnum"></span>
+</section>
+
+
+<style id="ebook-web-mode">@media screen{.webonly{display:revert!important}.printonly{display:none!important}}</style>
+<script>
+(function(){
+  var calc=document.getElementById('calc');
+  if(calc && !calc.querySelector('input') && document.querySelector('tr[data-campo]')){
+    var unit=calc.dataset.unit||'R$',totLabel=calc.dataset.total||'Total por ano';
+    document.querySelectorAll('tr[data-campo]').forEach(function(tr){
+      var row=document.createElement('div');row.className='row';var id='c_'+tr.dataset.campo;
+      row.innerHTML='<label for="'+id+'">'+tr.dataset.label+' <span style="color:var(--soft)">(faixa '+tr.dataset.min+' a '+tr.dataset.max+')</span></label>'+
+        '<input id="'+id+'" type="number" min="0" step="10" placeholder="0">';
+      calc.appendChild(row);
+    });
+    var tot=document.createElement('div');tot.className='tot';
+    tot.innerHTML='<span class="l">'+totLabel+'</span><span class="v" id="calcTot">'+unit+' 0</span>';
+    calc.appendChild(tot);
+    calc.addEventListener('input',function(){
+      var s=0;calc.querySelectorAll('input').forEach(function(i){s+=Number(i.value)||0});
+      document.getElementById('calcTot').textContent=unit+' '+s.toLocaleString('pt-BR');
+    });
+  }
+  document.querySelectorAll('.script p[data-script]').forEach(function(p){
+    if(p.nextElementSibling && p.nextElementSibling.classList.contains('copybtn'))return;
+    var b=document.createElement('button');b.className='copybtn webonly';b.textContent='Copiar';
+    b.addEventListener('click',function(){
+      navigator.clipboard.writeText(p.textContent.replace(/^"|"$/g,''));
+      b.textContent='Copiado';setTimeout(function(){b.textContent='Copiar'},1500);
+    });
+    p.insertAdjacentElement('afterend',b);
+  });
+})();
+</script>
+
+</body>
+</html>
